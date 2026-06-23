@@ -204,10 +204,6 @@ img{display:block;max-width:100%}
     <span class="sticky__badge">No Reserve</span>
     <span class="sticky__pipe">|</span>
     <div class="sticky__meta">
-      <span class="sticky__meta-item">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Time left <span class="sticky__val" id="cdSticky"></span>
-      </span>
       <span class="sticky__meta-item">High bid <span class="sticky__val"></span></span>
       <span class="sticky__meta-item"><a href="#bids" style="color:inherit">Bids <span class="sticky__val"></span></a></span>
       <span class="sticky__meta-item"><a href="#comments" style="color:inherit">Comments <span class="sticky__val"></span></a></span>
@@ -234,11 +230,6 @@ img{display:block;max-width:100%}
     <div class="listing__badge">No reserve</div>
     <div class="listing__meta">
       <div class="lm__items">
-        <span class="lm__item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Time left <strong id="cdPage"></strong>
-        </span>
-        <span class="lm__sep">|</span>
         <span class="lm__item">High bid <strong></strong></span>
         <span class="lm__sep">|</span>
         <span class="lm__item">Bids <strong></strong></span>
@@ -285,10 +276,6 @@ img{display:block;max-width:100%}
 
       <!-- LEFT -->
       <div>
-        <div class="ending-row">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Ending <strong>Thu, Jun 28 at 5:00 PM MST</strong>
-        </div>
         <table class="specs">
           <tr><td>Seller</td><td>Romulus Sottile</td></tr>
           <tr><td>Chassis/VIN</td><td>126A5082624</td></tr>
@@ -462,18 +449,6 @@ document.addEventListener("keydown",e=>{
 const sticky=document.getElementById("sticky");
 new IntersectionObserver(([e])=>sticky.classList.toggle("on",!e.isIntersecting),{threshold:0}).observe(document.getElementById("galleryAnchor"));
 
-// Countdown
-const end=new Date("2026-06-28T17:00:00-07:00");
-function fmt(ms){
-  if(ms<=0)return"Ended";
-  const d=Math.floor(ms/86400000),h=Math.floor((ms%86400000)/3600000),m=Math.floor((ms%3600000)/60000);
-  return d+"d "+h+"h "+m+"m";
-}
-function tick(){
-  const v=fmt(end-Date.now());
-  ["cdSticky","cdPage"].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=v;});
-}
-tick();setInterval(tick,60000);
 </script>
 </body>
 </html>
