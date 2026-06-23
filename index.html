@@ -114,6 +114,8 @@ img{display:block;max-width:100%}
 .section p+p{margin-top:10px}
 .blist{display:flex;flex-direction:column;gap:8px}
 .blist li{display:flex;gap:10px;font-size:14px;line-height:1.5;color:#333}
+.blist li.sub{padding-left:24px;font-size:13.5px;color:#555}
+.blist li.sub::before{background:#999}
 .blist li::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#555;flex-shrink:0;margin-top:6px}
 
 
@@ -336,9 +338,9 @@ img{display:block;max-width:100%}
         <li>4 speed synchronized transmission (except first gear)</li>
         <li>Plastic bumpers and matching side trim</li>
         <li>The chassis number (126A5082624) decodes as:</li>
-        <li>126 – Fiat 126</li>
-        <li>A – 594cc engine</li>
-        <li>5082624 – Sequential Production Number</li>
+        <li class="sub">126 – Fiat 126</li>
+        <li class="sub">A – 594cc engine</li>
+        <li class="sub">5082624 – Sequential Production Number</li>
       </ul>
     </div>
 
