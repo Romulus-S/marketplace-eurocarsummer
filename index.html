@@ -111,6 +111,28 @@ img{display:block;max-width:100%}
 .blist li::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#555;flex-shrink:0;margin-top:6px}
 
 
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb__modal{background:#fff;border-radius:4px;width:92vw;max-width:1080px;height:88vh;display:flex;flex-direction:column;overflow:hidden}
+.lb__hd{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid #e5e5e5;flex-shrink:0}
+.lb__title{font-size:14px;font-weight:700;color:#1a1a1a}
+.lb__close{background:none;border:1px solid #ccc;border-radius:3px;width:28px;height:28px;font-size:18px;color:#444;display:flex;align-items:center;justify-content:center;padding-bottom:1px}
+.lb__close:hover{background:#f5f5f5}
+.lb__body{display:flex;flex:1;overflow:hidden;min-height:0}
+.lb__thumbs{width:218px;flex-shrink:0;overflow-y:auto;border-right:1px solid #e5e5e5;padding:8px}
+.lb__tg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.lb__th{cursor:pointer;overflow:hidden;aspect-ratio:4/3;border:2px solid transparent;border-radius:2px;background:#111}
+.lb__th img{width:100%;height:100%;object-fit:cover;display:block}
+.lb__th.active{border-color:#1454c4}
+.lb__main{flex:1;position:relative;background:#111;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lb__img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.lb__arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:24px;display:flex;align-items:center;justify-content:center;z-index:2;line-height:1}
+.lb__arr:hover{background:rgba(0,0,0,.78)}
+.lb__arr-l{left:10px}
+.lb__arr-r{right:10px}
+.lb__count{position:absolute;bottom:10px;right:12px;color:#fff;font-size:12px;opacity:.9}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .gallery{grid-template-columns:1fr;height:auto}
@@ -200,17 +222,17 @@ img{display:block;max-width:100%}
 
     <!-- GALLERY -->
     <div class="gallery" id="galleryAnchor">
-      <div class="gallery__main">
+      <div class="gallery__main" onclick="lbOpen(cur)" style="cursor:pointer">
         <img id="mainImg" src="photos/1.jpg" alt="1972 Alfa Romeo GTV 2000" />
-        <button class="g-arrow g-arrow-l" onclick="changePhoto(-1)">&#8249;</button>
-        <button class="g-arrow g-arrow-r" onclick="changePhoto(1)">&#8250;</button>
+        <button class="g-arrow g-arrow-l" onclick="event.stopPropagation();changePhoto(-1)">&#8249;</button>
+        <button class="g-arrow g-arrow-r" onclick="event.stopPropagation();changePhoto(1)">&#8250;</button>
         <div class="g-count"><span id="pNum">1</span> / 87</div>
       </div>
       <div class="gallery__grid">
-        <div class="g-thumb" onclick="setPhoto(1)"><img src="photos/2.jpg" alt="" /></div>
-        <div class="g-thumb" onclick="setPhoto(2)"><img src="photos/3.jpg" alt="" /></div>
-        <div class="g-thumb" onclick="setPhoto(3)"><img src="photos/4.jpg" alt="" /></div>
-        <div class="g-thumb g-thumb-more" onclick="setPhoto(4)">
+        <div class="g-thumb" onclick="lbOpen(1)"><img src="photos/2.jpg" alt="" /></div>
+        <div class="g-thumb" onclick="lbOpen(2)"><img src="photos/3.jpg" alt="" /></div>
+        <div class="g-thumb" onclick="lbOpen(3)"><img src="photos/4.jpg" alt="" /></div>
+        <div class="g-thumb g-thumb-more" onclick="lbOpen(4)">
           <img src="photos/5.jpg" alt="" />
           <span>+83 photos</span>
         </div>
@@ -344,6 +366,25 @@ img{display:block;max-width:100%}
   </div><!-- /container -->
 </div><!-- /listing -->
 
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="if(event.target===this)lbClose()">
+  <div class="lb__modal">
+    <div class="lb__hd">
+      <span class="lb__title">Photos (87)</span>
+      <button class="lb__close" onclick="lbClose()">&#215;</button>
+    </div>
+    <div class="lb__body">
+      <div class="lb__thumbs"><div class="lb__tg" id="lbTg"></div></div>
+      <div class="lb__main">
+        <button class="lb__arr lb__arr-l" onclick="lbNav(-1)">&#8249;</button>
+        <img class="lb__img" id="lbImg" src="" alt="" />
+        <button class="lb__arr lb__arr-r" onclick="lbNav(1)">&#8250;</button>
+        <div class="lb__count"><span id="lbNum">1</span> of 87</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 const photos=Array.from({length:87},(_,i)=>`photos/${i+1}.jpg`);
 let cur=0;
@@ -353,6 +394,39 @@ function updateGallery(){
 }
 function changePhoto(d){cur=(cur+d+photos.length)%photos.length;updateGallery();}
 function setPhoto(i){if(i<photos.length){cur=i;updateGallery();}}
+
+// Lightbox
+const lbEl=document.getElementById("lb");
+const lbImgEl=document.getElementById("lbImg");
+const lbNumEl=document.getElementById("lbNum");
+const lbTgEl=document.getElementById("lbTg");
+let lbIdx=0;
+photos.forEach((src,i)=>{
+  const th=document.createElement("div");
+  th.className="lb__th";
+  const img=document.createElement("img");
+  img.src=src;img.alt="";
+  th.appendChild(img);
+  th.addEventListener("click",()=>lbGo(i));
+  lbTgEl.appendChild(th);
+});
+function lbGo(i){
+  lbIdx=(i+photos.length)%photos.length;
+  lbImgEl.src=photos[lbIdx];
+  lbNumEl.textContent=lbIdx+1;
+  lbTgEl.querySelectorAll(".lb__th").forEach((th,j)=>th.classList.toggle("active",j===lbIdx));
+  const active=lbTgEl.children[lbIdx];
+  if(active)active.scrollIntoView({block:"nearest"});
+}
+function lbOpen(i){lbGo(i);lbEl.classList.add("open");document.body.style.overflow="hidden";}
+function lbClose(){lbEl.classList.remove("open");document.body.style.overflow="";}
+function lbNav(d){lbGo(lbIdx+d);}
+document.addEventListener("keydown",e=>{
+  if(!lbEl.classList.contains("open"))return;
+  if(e.key==="Escape")lbClose();
+  if(e.key==="ArrowLeft")lbNav(-1);
+  if(e.key==="ArrowRight")lbNav(1);
+});
 
 // Sticky bar
 const sticky=document.getElementById("sticky");
