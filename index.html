@@ -40,8 +40,14 @@ img{display:block;max-width:100%}
 .nav__icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:#9ca3af}
 .nav__icon:hover{color:#fff}
 
+/* SUB-NAV */
+.subnav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:56px;z-index:195}
+.subnav__i{display:flex;align-items:center;height:38px;gap:2px}
+.subnav__link{display:flex;align-items:center;gap:5px;font-size:12.5px;color:#374151;padding:4px 10px;border-radius:3px;font-weight:500}
+.subnav__link:hover{background:var(--gray);color:var(--text)}
+
 /* STICKY BAR */
-.sticky{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.08);position:sticky;top:56px;z-index:190;display:none}
+.sticky{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.08);position:sticky;top:94px;z-index:190;display:none}
 .sticky.on{display:block}
 .sticky__i{display:flex;align-items:center;height:52px;gap:10px}
 .sticky__title{font-size:13px;font-weight:700;white-space:nowrap}
@@ -63,8 +69,16 @@ img{display:block;max-width:100%}
 .crumb .sep{margin:0 6px;color:#bbb}
 
 /* LISTING */
-.listing{padding:22px 0 64px}
-.listing__title{font-size:28px;font-weight:800;letter-spacing:-.4px;line-height:1.2;margin-bottom:16px}
+.listing{padding:20px 0 64px}
+.listing__title{font-size:28px;font-weight:800;letter-spacing:-.4px;line-height:1.2;margin-bottom:10px}
+.listing__badge{display:inline-block;background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7;font-size:12px;font-weight:600;padding:2px 10px;border-radius:20px;margin-bottom:14px}
+.listing__meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.lm__items{display:flex;align-items:center;gap:0;font-size:13px;color:#374151}
+.lm__item{display:flex;align-items:center;gap:5px;padding:0 14px}
+.lm__item:first-child{padding-left:0}
+.lm__item strong{font-weight:700;color:var(--text)}
+.lm__sep{color:#d1d5db;font-size:16px;line-height:1}
+.lm__acts{display:flex;align-items:center;gap:8px}
 
 /* GALLERY */
 .gallery{display:grid;grid-template-columns:3fr 2fr;gap:3px;height:460px;margin-bottom:3px}
@@ -75,7 +89,7 @@ img{display:block;max-width:100%}
 .g-arrow-l{left:10px}
 .g-arrow-r{right:10px}
 .g-count{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.58);color:#fff;font-size:11px;padding:3px 9px;border-radius:20px}
-.gallery__grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;overflow:hidden}
+.gallery__grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:3px;overflow:hidden}
 .g-thumb{overflow:hidden;background:#111;cursor:pointer;position:relative}
 .g-thumb img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
 .g-thumb:hover img{opacity:.85}
@@ -167,14 +181,23 @@ img{display:block;max-width:100%}
       <a href="#">Events</a>
     </div>
     <div class="nav__right">
-      <a href="#" class="nav__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
-      <a href="#">Auction Results</a>
-      <a href="#">Sell</a>
-      <a href="#" class="nav__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></a>
       <a href="#" class="nav__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="#" style="background:#1454c4;color:#fff;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:3px">Log In</a>
+      <a href="#" class="nav__icon" style="margin-left:2px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></a>
     </div>
   </div>
 </nav>
+
+<!-- SUB-NAV -->
+<div class="subnav">
+  <div class="container subnav__i">
+    <a href="#" class="subnav__link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</a>
+    <a href="#" class="subnav__link">Auction Results</a>
+    <a href="#" class="subnav__link">Sell</a>
+    <a href="#" class="subnav__link">Watch List</a>
+    <a href="#" class="subnav__link">My Garage</a>
+  </div>
+</div>
 
 <!-- STICKY BAR -->
 <div class="sticky" id="sticky">
@@ -205,20 +228,37 @@ img{display:block;max-width:100%}
   </div>
 </div>
 
-<!-- BREADCRUMB -->
-<div class="crumb">
-  <div class="container">
-    <a href="#">Marketplace</a><span class="sep">›</span>
-    <a href="#">Auctions</a><span class="sep">›</span>
-    <span>1972 Alfa Romeo GTV 2000</span>
-  </div>
-</div>
-
 <!-- LISTING -->
 <div class="listing">
   <div class="container">
 
     <h1 class="listing__title">1972 Alfa Romeo GTV 2000</h1>
+    <div class="listing__badge">No reserve</div>
+    <div class="listing__meta">
+      <div class="lm__items">
+        <span class="lm__item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Time left <strong id="cdPage">6 days</strong>
+        </span>
+        <span class="lm__sep">|</span>
+        <span class="lm__item">High bid <strong>$14,500</strong></span>
+        <span class="lm__sep">|</span>
+        <span class="lm__item">Bids <strong>7</strong></span>
+        <span class="lm__sep">|</span>
+        <span class="lm__item">Comments <strong>1</strong></span>
+      </div>
+      <div class="lm__acts">
+        <button class="btn-sw">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Watch
+        </button>
+        <button class="btn-sw">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share
+        </button>
+        <button class="btn-bid-s">Place bid</button>
+      </div>
+    </div>
 
     <!-- GALLERY -->
     <div class="gallery" id="galleryAnchor">
@@ -232,9 +272,11 @@ img{display:block;max-width:100%}
         <div class="g-thumb" onclick="lbOpen(1)"><img src="photos/2.jpg" alt="" /></div>
         <div class="g-thumb" onclick="lbOpen(2)"><img src="photos/3.jpg" alt="" /></div>
         <div class="g-thumb" onclick="lbOpen(3)"><img src="photos/4.jpg" alt="" /></div>
-        <div class="g-thumb g-thumb-more" onclick="lbOpen(4)">
-          <img src="photos/5.jpg" alt="" />
-          <span>+83 photos</span>
+        <div class="g-thumb" onclick="lbOpen(4)"><img src="photos/5.jpg" alt="" /></div>
+        <div class="g-thumb" onclick="lbOpen(5)"><img src="photos/6.jpg" alt="" /></div>
+        <div class="g-thumb g-thumb-more" onclick="lbOpen(6)">
+          <img src="photos/7.jpg" alt="" />
+          <span>All photos (87)</span>
         </div>
       </div>
     </div>
@@ -441,7 +483,7 @@ function fmt(ms){
 }
 function tick(){
   const v=fmt(end-Date.now());
-  const el=document.getElementById("cdSticky");if(el)el.textContent=v;
+  ["cdSticky","cdPage"].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=v;});
 }
 tick();setInterval(tick,60000);
 </script>
