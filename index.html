@@ -1,262 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1972 Alfa Romeo GTV 2000 — Euro Car Summer Marketplace</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:   #1c1c28;
-      --blue:   #1a5dc8;
-      --blue2:  #1449a0;
-      --green:  #00884a;
-      --border: #d8d8d8;
-      --gray:   #f5f5f5;
-      --text:   #222222;
-      --muted:  #666666;
-      --white:  #ffffff;
-      --r:      4px;
-    }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 14px; color: var(--text); background: #fff; line-height: 1.55; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
-    button { cursor: pointer; border: none; font-family: inherit; }
-    img { display: block; max-width: 100%; }
-    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>1972 Alfa Romeo GTV 2000 — Euro Car Summer Marketplace</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a1d2e;
+  --blue:#1454c4;
+  --blue2:#0f3f9e;
+  --green:#00884a;
+  --border:#d8d8d8;
+  --gray:#f5f5f5;
+  --text:#1a1a1a;
+  --muted:#6b7280;
+  --r:4px;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;color:var(--text);background:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:inherit}
+img{display:block;max-width:100%}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-    /* ── Nav ── */
-    .nav { background: var(--navy); position: sticky; top: 0; z-index: 200; }
-    .nav__inner { display: flex; align-items: center; height: 56px; gap: 0; }
-    .nav__logo { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-right: 28px; white-space: nowrap; }
-    .nav__logo-h { font-size: 22px; font-weight: 900; color: #fff; line-height: 1; }
-    .nav__logo-slash { color: #5a6070; margin: 0 4px; font-weight: 300; font-size: 18px; }
-    .nav__logo-sub { font-size: 13px; font-weight: 600; color: #aab0be; letter-spacing: .2px; }
-    .nav__links { display: flex; gap: 2px; flex: 1; }
-    .nav__links a { color: #c0c8d8; padding: 6px 11px; border-radius: var(--r); font-size: 13px; font-weight: 500; transition: color .15s, background .15s; }
-    .nav__links a:hover { color: #fff; background: rgba(255,255,255,.07); }
-    .nav__right { display: flex; align-items: center; gap: 6px; }
-    .nav__right a { color: #c0c8d8; font-size: 13px; padding: 5px 8px; border-radius: var(--r); transition: color .15s; }
-    .nav__right a:hover { color: #fff; }
-    .nav__right .btn-sell { background: var(--blue); color: #fff; padding: 6px 16px; border-radius: var(--r); font-size: 13px; font-weight: 600; transition: background .15s; }
-    .nav__right .btn-sell:hover { background: var(--blue2); }
-    .nav__icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; color: #c0c8d8; border-radius: var(--r); transition: background .15s; }
-    .nav__icon:hover { background: rgba(255,255,255,.07); color: #fff; }
+/* NAV */
+.nav{background:var(--navy);position:sticky;top:0;z-index:200}
+.nav__i{display:flex;align-items:center;height:56px}
+.nav__logo{display:flex;align-items:center;color:#fff;font-size:15px;font-weight:700;margin-right:28px;white-space:nowrap;letter-spacing:-.2px}
+.nav__logo .h{font-size:20px;font-weight:900;margin-right:2px}
+.nav__logo .sl{color:#4a5568;margin:0 5px;font-weight:300;font-size:18px}
+.nav__logo .sub{color:#9ca3af;font-weight:400;font-size:13.5px}
+.nav__links{display:flex;gap:2px;flex:1}
+.nav__links a{color:#d1d5db;padding:6px 10px;border-radius:3px;font-size:13px;font-weight:500;transition:color .15s,background .15s}
+.nav__links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav__right{display:flex;align-items:center;gap:4px;margin-left:8px}
+.nav__right a{color:#d1d5db;font-size:13px;padding:6px 8px;transition:color .15s}
+.nav__right a:hover{color:#fff}
+.nav__icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:#9ca3af}
+.nav__icon:hover{color:#fff}
 
-    /* ── Sticky bar ── */
-    .sticky-bar { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 56px; z-index: 190; display: none; }
-    .sticky-bar.visible { display: block; }
-    .sticky-bar__inner { display: flex; align-items: center; height: 48px; gap: 0; }
-    .sticky-bar__title { font-size: 13.5px; font-weight: 700; margin-right: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 280px; }
-    .sticky-badge { background: #f0f0f0; border: 1px solid var(--border); color: #444; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 3px; margin-right: 14px; white-space: nowrap; }
-    .sticky-bar__meta { display: flex; gap: 18px; font-size: 12.5px; color: var(--muted); flex: 1; }
-    .sticky-bar__meta span strong { color: var(--text); }
-    .sticky-bar__actions { display: flex; gap: 8px; align-items: center; }
-    .btn-sticky { background: none; color: #444; border: 1px solid var(--border); padding: 5px 12px; border-radius: var(--r); font-size: 12.5px; font-weight: 600; display: flex; align-items: center; gap: 5px; transition: background .15s; }
-    .btn-sticky:hover { background: var(--gray); }
-    .btn-sticky-bid { background: var(--blue); color: #fff; border: none; padding: 6px 18px; border-radius: var(--r); font-size: 13px; font-weight: 700; transition: background .15s; }
-    .btn-sticky-bid:hover { background: var(--blue2); }
+/* STICKY BAR */
+.sticky{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.08);position:sticky;top:56px;z-index:190;display:none}
+.sticky.on{display:block}
+.sticky__i{display:flex;align-items:center;height:52px;gap:10px}
+.sticky__title{font-size:13px;font-weight:700;white-space:nowrap}
+.sticky__badge{background:#fef2f2;border:1px solid #fca5a5;color:#b91c1c;font-size:11px;font-weight:600;padding:2px 8px;border-radius:3px;white-space:nowrap}
+.sticky__pipe{color:#d1d5db;margin:0 4px}
+.sticky__meta{display:flex;align-items:center;gap:18px;flex:1;font-size:12.5px;color:var(--muted)}
+.sticky__meta-item{display:flex;align-items:center;gap:5px}
+.sticky__val{font-weight:700;color:var(--text)}
+.sticky__acts{display:flex;align-items:center;gap:8px}
+.btn-sw{background:#fff;border:1px solid #ccc;color:#374151;padding:6px 13px;border-radius:var(--r);font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px}
+.btn-sw:hover{background:var(--gray)}
+.btn-bid-s{background:var(--blue);color:#fff;padding:7px 18px;border-radius:var(--r);font-size:13px;font-weight:700;border:none}
+.btn-bid-s:hover{background:var(--blue2)}
 
-    /* ── Breadcrumb ── */
-    .breadcrumb { padding: 11px 0; font-size: 12.5px; color: var(--muted); border-bottom: 1px solid var(--border); }
-    .breadcrumb a { color: var(--muted); }
-    .breadcrumb a:hover { color: var(--blue); text-decoration: underline; }
-    .breadcrumb .sep { margin: 0 6px; color: #bbb; }
-    .breadcrumb .current { color: var(--text); }
+/* BREADCRUMB */
+.crumb{font-size:12.5px;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border)}
+.crumb a{color:var(--muted)}
+.crumb a:hover{text-decoration:underline;color:var(--blue)}
+.crumb .sep{margin:0 6px;color:#bbb}
 
-    /* ── Listing wrapper ── */
-    .listing { padding: 20px 0 56px; }
-    .listing__title { font-size: 26px; font-weight: 800; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 6px; }
-    .listing__subtitle { font-size: 13px; color: var(--muted); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-    .listing__subtitle .dot { color: #ccc; }
+/* LISTING */
+.listing{padding:22px 0 64px}
+.listing__title{font-size:28px;font-weight:800;letter-spacing:-.4px;line-height:1.2;margin-bottom:16px}
 
-    /* ── Gallery ── */
-    .gallery { display: grid; grid-template-columns: 1fr 280px; gap: 4px; margin-bottom: 4px; }
-    .gallery__main { position: relative; background: #111; border-radius: var(--r) 0 0 var(--r); overflow: hidden; aspect-ratio: 4/3; }
-    .gallery__main img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery__nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.5); color: #fff; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: background .15s; border: none; }
-    .gallery__nav:hover { background: rgba(0,0,0,.8); }
-    .gallery__nav--prev { left: 10px; }
-    .gallery__nav--next { right: 10px; }
-    .gallery__count-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,.55); color: #fff; font-size: 11.5px; padding: 3px 9px; border-radius: 20px; }
-    .gallery__grid { display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 0 var(--r) var(--r) 0; overflow: hidden; }
-    .gallery__grid-item { overflow: hidden; cursor: pointer; background: #111; position: relative; }
-    .gallery__grid-item img { width: 100%; height: 100%; object-fit: cover; transition: opacity .2s; }
-    .gallery__grid-item:hover img { opacity: .85; }
-    .gallery__grid-item--more { display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.7); }
-    .gallery__grid-item--more span { color: #fff; font-size: 14px; font-weight: 700; }
-    .gallery__strip { display: flex; gap: 4px; margin-bottom: 20px; overflow-x: auto; }
-    .gallery__strip-thumb { width: 72px; flex-shrink: 0; aspect-ratio: 4/3; border-radius: 3px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color .15s; }
-    .gallery__strip-thumb.active { border-color: var(--blue); }
-    .gallery__strip-thumb img { width: 100%; height: 100%; object-fit: cover; }
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:3fr 2fr;gap:3px;height:460px;margin-bottom:3px}
+.gallery__main{position:relative;overflow:hidden;background:#111}
+.gallery__main img{width:100%;height:100%;object-fit:cover}
+.g-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;background:rgba(0,0,0,.52);color:#fff;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;transition:background .15s}
+.g-arrow:hover{background:rgba(0,0,0,.82)}
+.g-arrow-l{left:10px}
+.g-arrow-r{right:10px}
+.g-count{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.58);color:#fff;font-size:11px;padding:3px 9px;border-radius:20px}
+.gallery__grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;overflow:hidden}
+.g-thumb{overflow:hidden;background:#111;cursor:pointer;position:relative}
+.g-thumb img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.g-thumb:hover img{opacity:.85}
+.g-thumb-more{display:flex;align-items:center;justify-content:center}
+.g-thumb-more img{opacity:.4}
+.g-thumb-more span{position:absolute;color:#fff;font-size:13px;font-weight:700}
+.g-strip{display:flex;gap:4px;padding:4px 0 14px;overflow-x:auto}
+.g-strip::-webkit-scrollbar{height:3px}
+.g-strip::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
+.g-st{width:80px;flex-shrink:0;height:60px;border-radius:3px;overflow:hidden;cursor:pointer;border:2px solid transparent}
+.g-st.active{border-color:var(--blue)}
+.g-st img{width:100%;height:100%;object-fit:cover}
 
-    /* ── Two-column layout ── */
-    .listing__cols { display: grid; grid-template-columns: 1fr 300px; gap: 28px; margin-bottom: 32px; align-items: start; }
+/* TWO-COLUMN */
+.cols{display:grid;grid-template-columns:1fr 360px;gap:32px;margin-bottom:36px;align-items:start}
 
-    /* Specs table */
-    .specs-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 14px; }
-    .specs-table tr { border-bottom: 1px solid var(--border); }
-    .specs-table tr:last-child { border-bottom: none; }
-    .specs-table td { padding: 9px 4px; vertical-align: top; }
-    .specs-table td:first-child { color: var(--muted); width: 140px; font-size: 13px; }
-    .specs-table td:last-child { font-weight: 600; color: var(--text); }
+/* ENDING TIME */
+.ending-row{font-size:13px;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.ending-row strong{color:var(--text)}
 
-    .carfax-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
-    .carfax-logo { font-size: 11px; font-weight: 800; background: #e8000d; color: #fff; padding: 3px 7px; border-radius: 3px; letter-spacing: .5px; }
-    .carfax-link { font-size: 13px; color: var(--blue); text-decoration: underline; }
-    .certified-badge { display: flex; align-items: center; gap: 7px; margin-top: 12px; background: #e8f5ee; border: 1px solid #a8d8be; border-radius: var(--r); padding: 9px 12px; font-size: 13px; color: #1a6b38; font-weight: 600; }
-    .certified-badge svg { flex-shrink: 0; }
+/* SPECS */
+.specs{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:0}
+.specs tr{border-bottom:1px solid var(--border)}
+.specs tr:last-child{border-bottom:none}
+.specs td{padding:8px 0;vertical-align:top}
+.specs td:first-child{color:var(--muted);width:130px;font-size:13px}
+.specs td:last-child{font-weight:500}
 
-    /* Sidebar */
-    .sidebar { display: flex; flex-direction: column; gap: 0; }
+/* CARFAX + CERTIFIED */
+.carfax-row{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+.cfx{background:#c00;color:#fff;font-size:10px;font-weight:900;padding:2px 6px;border-radius:2px;letter-spacing:.3px}
+.cfx-link{font-size:13px;color:var(--blue);text-decoration:underline}
+.cert{display:flex;align-items:flex-start;gap:8px;margin-top:10px;background:#edf7f1;border:1px solid #b2ddc5;border-radius:var(--r);padding:10px 12px}
+.cert svg{flex-shrink:0;margin-top:1px}
+.cert-body{font-size:12.5px;color:#1a5e38;font-weight:600;line-height:1.4}
+.cert-body a{text-decoration:underline;color:#1a5e38}
+.cert-body small{display:block;font-weight:400;font-size:11.5px;margin-top:2px;color:#2d7a50}
 
-    .finance-section { padding: 14px 0; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
-    .finance-section h3 { font-size: 13.5px; font-weight: 700; margin-bottom: 6px; }
-    .finance-section p { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
-    .finance-link { font-size: 12.5px; color: var(--blue); text-decoration: underline; }
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:16px}
+.finance-card{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.finance-card h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.finance-card p{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:8px}
+.finance-card a{font-size:12.5px;color:var(--blue);text-decoration:underline}
 
-    .bid-box { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-    .bid-box__head { padding: 12px 14px; background: var(--gray); border-bottom: 1px solid var(--border); }
-    .bid-box__head-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 2px; }
-    .bid-box__car-name { font-size: 13.5px; font-weight: 700; line-height: 1.3; }
-    .bid-box__body { padding: 14px; }
-    .bid-box__label { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 3px; }
-    .bid-box__amount { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; color: var(--text); }
-    .bid-box__meta { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-    .bid-box__meta span { font-weight: 600; color: var(--text); }
-    .bid-box__meta .sep { margin: 0 6px; }
-    .btn-place-bid { display: block; width: 100%; background: var(--blue); color: #fff; text-align: center; padding: 12px; border-radius: var(--r); font-size: 15px; font-weight: 700; border: none; cursor: pointer; transition: background .15s; margin-bottom: 12px; }
-    .btn-place-bid:hover { background: var(--blue2); }
-    .bid-box__actions { display: flex; gap: 16px; font-size: 12.5px; }
-    .bid-box__actions a { color: var(--muted); display: flex; align-items: center; gap: 5px; transition: color .15s; }
-    .bid-box__actions a:hover { color: var(--text); }
-    .bid-box__footer { padding: 10px 14px; background: var(--gray); border-top: 1px solid var(--border); }
-    .bid-box__timer { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
-    .bid-box__timer strong { color: var(--text); }
+.bid-box{border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.bb-hd{padding:10px 14px;border-bottom:1px solid var(--border);background:var(--gray)}
+.bb-hd-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.bb-hd-name{font-size:13px;font-weight:700;margin-top:2px;line-height:1.3}
+.bb-body{padding:14px}
+.bb-bid-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:3px}
+.bb-amount{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--text);margin-bottom:3px;line-height:1}
+.bb-submeta{font-size:12px;color:var(--muted);margin-bottom:14px}
+.bb-submeta a{color:var(--blue);text-decoration:underline}
+.btn-bid{display:block;width:100%;background:var(--blue);color:#fff;text-align:center;padding:13px;border-radius:var(--r);font-size:15px;font-weight:700;cursor:pointer;border:none;margin-bottom:12px;transition:background .15s}
+.btn-bid:hover{background:var(--blue2)}
+.bb-links{display:flex;gap:18px;font-size:12.5px}
+.bb-links a{color:var(--muted);display:flex;align-items:center;gap:5px;transition:color .15s}
+.bb-links a:hover{color:var(--text)}
+.bb-ft{padding:9px 14px;background:var(--gray);border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.bb-ft strong{color:var(--text)}
 
-    /* ── Content sections ── */
-    .section { margin-bottom: 28px; }
-    .section__title { font-size: 16px; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-    .section__body { font-size: 14px; line-height: 1.7; color: #333; }
-    .section__body p + p { margin-top: 10px; }
-    .bullet-list { display: flex; flex-direction: column; gap: 7px; }
-    .bullet-list li { display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #333; }
-    .bullet-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #555; flex-shrink: 0; margin-top: 6px; }
+/* CONTENT SECTIONS */
+.section{margin-bottom:30px}
+.section h2{font-size:15px;font-weight:700;border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:12px}
+.section p{font-size:14px;line-height:1.7;color:#333}
+.section p+p{margin-top:10px}
+.blist{display:flex;flex-direction:column;gap:8px}
+.blist li{display:flex;gap:10px;font-size:14px;line-height:1.5;color:#333}
+.blist li::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#555;flex-shrink:0;margin-top:6px}
 
-    /* Documents */
-    .doc-list { display: flex; flex-direction: column; gap: 10px; }
-    .doc-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--r); font-size: 13.5px; color: var(--blue); transition: background .15s; }
-    .doc-item:hover { background: var(--gray); }
-    .doc-icon { width: 32px; height: 32px; background: #e8f0fe; border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+/* DOCUMENTS */
+.doc-list{display:flex;flex-direction:column;gap:8px}
+.doc-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--border);border-radius:var(--r);font-size:13.5px;color:var(--blue);transition:background .15s}
+.doc-link:hover{background:var(--gray)}
+.doc-icon{width:36px;height:36px;background:#ebf0fb;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-    /* Disclaimer */
-    .disclaimer { background: var(--gray); border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+/* DISCLAIMER */
+.disclaimer{background:#fafafa;border:1px solid #e0e0e0;border-radius:var(--r);padding:16px;font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:28px}
 
-    /* Mid-page bid card */
-    .mid-bid-card { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 32px; max-width: 480px; }
-    .mid-bid-card__title { font-size: 14px; font-weight: 700; padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--gray); }
-    .mid-bid-card__body { padding: 16px; }
-    .mid-bid-card__label { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 3px; }
-    .mid-bid-card__amount { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
-    .mid-bid-card__meta { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-    .mid-bid-card__meta span { font-weight: 600; color: var(--text); }
-    .mid-bid-card__links { display: flex; gap: 16px; font-size: 12.5px; margin-top: 10px; }
-    .mid-bid-card__links a { color: var(--muted); display: flex; align-items: center; gap: 5px; }
-    .mid-bid-card__links a:hover { color: var(--text); }
-    .mid-bid-card__footer { padding: 8px 16px 10px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); background: var(--gray); }
+/* INLINE BID CARD */
+.ibid{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:32px;max-width:560px}
+.ibid__hd{padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted)}
+.ibid__hd strong{color:var(--text)}
+.ibid__body{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px;border-bottom:1px solid var(--border)}
+.ibid__lbl{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:4px}
+.ibid__amt{font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1;color:var(--text)}
+.ibid__right{font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:5px;justify-content:center}
+.ibid__right span strong{color:var(--text);font-weight:600}
+.ibid__acts{padding:14px 16px}
+.ibid__act-links{display:flex;gap:16px;margin-top:10px;font-size:12.5px}
+.ibid__act-links a{color:var(--muted);display:flex;align-items:center;gap:5px}
+.ibid__act-links a:hover{color:var(--text)}
+.ibid__ft{padding:8px 16px;background:var(--gray);border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.ibid__ft strong{color:var(--text)}
 
-    /* Bids */
-    .bids-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
-    .bids-header h2 { font-size: 16px; font-weight: 700; }
-    .bids-count { font-size: 12.5px; color: var(--muted); }
-    .bid-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
-    .bid-row:last-child { border-bottom: none; }
-    .bid-avatar { width: 36px; height: 36px; border-radius: 50%; background: #d0d8e8; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--navy); flex-shrink: 0; }
-    .bid-info { flex: 1; }
-    .bid-user { font-size: 13.5px; font-weight: 600; }
-    .bid-time { font-size: 12px; color: var(--muted); }
-    .bid-amount-cell { font-size: 16px; font-weight: 700; }
+/* BIDS */
+.bids-hd{font-size:15px;font-weight:700;margin-bottom:2px}
+.bids-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+.bid-entry{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.bid-entry:last-child{border-bottom:none}
+.bid-av{width:38px;height:38px;border-radius:50%;background:#c8d8f0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#2c4a7c;flex-shrink:0}
+.bid-det{}
+.bid-user{font-size:13.5px;font-weight:600;color:var(--blue);margin-bottom:2px}
+.bid-date{font-size:12px;color:var(--muted);margin-bottom:4px}
+.bid-placed{font-size:13.5px;font-weight:700}
 
-    /* Comments */
-    .comment { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
-    .comment:last-child { border-bottom: none; }
-    .comment__avatar { width: 36px; height: 36px; border-radius: 50%; background: #c8d8f0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--navy); flex-shrink: 0; }
-    .comment__name { font-size: 13.5px; font-weight: 700; margin-bottom: 3px; }
-    .comment__time { font-size: 12px; color: var(--muted); }
-    .comment__body { font-size: 13.5px; color: #333; line-height: 1.55; margin: 6px 0 8px; }
-    .comment__actions { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
-    .comment__actions a { color: var(--muted); }
-    .comment__actions a:hover { color: var(--blue); }
-    .comment-gate { font-size: 13.5px; color: var(--muted); padding: 16px 0; }
-    .comment-gate a { color: var(--blue); text-decoration: underline; }
+/* COMMENTS */
+.cmt-add{font-size:13.5px;color:var(--muted);padding:10px 0 16px}
+.cmt-add a{color:var(--blue);text-decoration:underline}
+.cmt{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}
+.cmt:last-child{border-bottom:none}
+.cmt-av{width:38px;height:38px;border-radius:50%;background:#c8d8f0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#2c4a7c;flex-shrink:0}
+.cmt-body{}
+.cmt-name{font-size:13.5px;font-weight:700}
+.cmt-time{font-size:12px;color:var(--muted);margin-bottom:6px}
+.cmt-text{font-size:13.5px;color:#333;line-height:1.55;margin-bottom:8px}
+.cmt-acts{display:flex;gap:14px;font-size:12px}
+.cmt-acts a{color:var(--muted)}
+.cmt-acts a:hover{color:var(--text)}
 
-    /* ── Why / Testimonial / Newsletter strip ── */
-    .promo-strip { background: #f0f0f0; border-top: 1px solid var(--border); margin-top: 48px; }
-    .promo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 260px; }
-    .promo-col { padding: 36px 32px; }
-    .promo-col--dark { background: var(--navy); color: #fff; }
-    .promo-col--white { background: #fff; border-left: 1px solid var(--border); }
-    .promo-col--light { background: var(--gray); border-left: 1px solid var(--border); }
-    .promo-col h3 { font-size: 16px; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
-    .promo-col--dark h3 { color: #fff; }
-    .promo-col ul { display: flex; flex-direction: column; gap: 9px; }
-    .promo-col ul li { font-size: 13.5px; color: #c0c8d8; display: flex; gap: 8px; line-height: 1.45; }
-    .promo-col ul li::before { content: "✓"; color: #4ade80; flex-shrink: 0; font-weight: 700; }
-    .promo-col .learn-more { font-size: 13px; color: #7ab4ff; margin-top: 16px; display: block; text-decoration: underline; }
-    .testimonial-name { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
-    .testimonial-body { font-size: 14px; line-height: 1.65; color: #333; margin-bottom: 10px; }
-    .testimonial-meta { font-size: 12px; color: var(--muted); }
-    .testimonial-car { font-weight: 600; color: var(--blue); font-size: 12px; }
-    .newsletter-form { margin-top: 6px; }
-    .newsletter-form p { font-size: 13px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
-    .newsletter-input-row { display: flex; gap: 6px; }
-    .newsletter-input-row input { flex: 1; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--r); font-size: 13px; font-family: inherit; }
-    .newsletter-input-row input:focus { outline: none; border-color: var(--navy); }
-    .newsletter-input-row button { background: var(--navy); color: #fff; padding: 8px 16px; border-radius: var(--r); font-size: 13px; font-weight: 600; white-space: nowrap; transition: background .15s; }
-    .newsletter-input-row button:hover { background: #2d2d3e; }
+/* PROMO STRIP */
+.promo{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--border);margin-top:48px}
+.promo-col{padding:40px 36px}
+.promo-dark{background:#0f1e3c}
+.promo-white{background:#fff;border-left:1px solid var(--border)}
+.promo-light{background:#f7f8fa;border-left:1px solid var(--border)}
+.promo-col h3{font-size:16px;font-weight:800;margin-bottom:14px}
+.promo-dark h3{color:#fff}
+.promo-dark p.intro{font-size:13.5px;color:#94a3b8;line-height:1.6;margin-bottom:16px}
+.promo-dark ul{display:flex;flex-direction:column;gap:10px}
+.promo-dark ul li{font-size:13.5px;color:#cbd5e1;display:flex;gap:8px;line-height:1.45}
+.promo-dark ul li::before{content:"✓";color:#4ade80;flex-shrink:0;font-weight:700}
+.promo-learn{display:block;margin-top:18px;font-size:13px;color:#60a5fa;text-decoration:underline}
+.promo-cust-name{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px}
+.promo-quote{font-size:14px;line-height:1.65;color:#222;margin-bottom:10px}
+.promo-sold{font-size:12px;color:var(--muted)}
+.promo-sold a{color:var(--blue);text-decoration:underline}
+.promo-nl-sub{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px}
+.nl-row{display:flex;gap:6px}
+.nl-row input{flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;font-family:inherit}
+.nl-row input:focus{outline:none;border-color:var(--navy)}
+.nl-row button{background:var(--navy);color:#fff;padding:9px 14px;border-radius:var(--r);font-size:13px;font-weight:600;white-space:nowrap;border:none;cursor:pointer}
+.nl-row button:hover{background:#252b3e}
 
-    /* ── Footer ── */
-    .footer { background: var(--navy); color: #9ca3af; padding: 40px 0 20px; }
-    .footer__inner { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }
-    .footer__logo { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 18px; font-weight: 800; margin-bottom: 12px; }
-    .footer__brand p { font-size: 12.5px; line-height: 1.6; max-width: 220px; }
-    .footer__col h4 { color: #e2e8f0; font-size: 11px; text-transform: uppercase; letter-spacing: .8px; font-weight: 700; margin-bottom: 12px; }
-    .footer__col ul { display: flex; flex-direction: column; gap: 7px; }
-    .footer__col ul a { font-size: 13px; color: #9ca3af; transition: color .15s; }
-    .footer__col ul a:hover { color: #fff; }
-    .footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 18px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; flex-wrap: wrap; gap: 10px; }
-    .footer__bottom a { color: #6b7280; margin-left: 16px; }
-    .footer__bottom a:hover { color: #9ca3af; }
+/* LEGAL */
+.legal{padding:28px 0 16px;background:#fff}
+.legal p{font-size:11.5px;color:#9ca3af;line-height:1.7}
+.legal a{color:#9ca3af;text-decoration:underline}
 
-    /* ── Responsive ── */
-    @media (max-width: 900px) {
-      .gallery { grid-template-columns: 1fr; }
-      .gallery__grid { grid-template-columns: repeat(4, 1fr); grid-template-rows: auto; }
-      .gallery__main { border-radius: var(--r) var(--r) 0 0; }
-      .gallery__grid { border-radius: 0 0 var(--r) var(--r); }
-      .listing__cols { grid-template-columns: 1fr; }
-      .promo-grid { grid-template-columns: 1fr; }
-      .footer__inner { grid-template-columns: 1fr 1fr; }
-      .nav__links { display: none; }
-    }
-    @media (max-width: 600px) {
-      .listing__title { font-size: 20px; }
-      .footer__inner { grid-template-columns: 1fr; }
-      .gallery__grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
-    }
-  </style>
+/* FOOTER */
+.footer{background:var(--navy)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand{padding:40px 40px;border-right:1px solid rgba(255,255,255,.08)}
+.footer-wordmark{font-size:36px;font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;margin-bottom:10px}
+.footer-nl-label{font-size:13px;font-weight:700;color:#9ca3af;margin-bottom:4px}
+.footer-nl-sub{font-size:12.5px;color:#6b7280;line-height:1.5}
+.footer-col{padding:40px 28px;border-right:1px solid rgba(255,255,255,.08)}
+.footer-col:last-child{border-right:none}
+.footer-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#9ca3af;font-weight:700;margin-bottom:14px}
+.footer-col ul{display:flex;flex-direction:column;gap:9px}
+.footer-col ul a{font-size:13px;color:#6b7280;transition:color .15s}
+.footer-col ul a:hover{color:#fff}
+.footer-btm{padding:16px 40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#4b5563}
+.footer-btm a{color:#4b5563;margin-left:16px}
+.footer-btm a:hover{color:#9ca3af}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .gallery{grid-template-columns:1fr;height:auto}
+  .gallery__grid{grid-template-columns:repeat(4,1fr);grid-template-rows:120px}
+  .cols{grid-template-columns:1fr}
+  .promo{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .nav__links{display:none}
+}
+@media(max-width:640px){
+  .listing__title{font-size:22px}
+  .gallery__grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .footer-top{grid-template-columns:1fr}
+  .ibid__body{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<!-- ── Nav ── -->
+<!-- NAV -->
 <nav class="nav">
-  <div class="container nav__inner">
+  <div class="container nav__i">
     <a href="#" class="nav__logo">
-      <span class="nav__logo-h">H</span>
-      <span class="nav__logo-slash">//</span>
-      <span>euro car summer</span>
-      <span class="nav__logo-slash">//</span>
-      <span class="nav__logo-sub">Marketplace</span>
+      <span class="h">H</span><span class="sl">//</span><span>euro car summer</span><span class="sl">//</span><span class="sub">Marketplace</span>
     </a>
     <div class="nav__links">
       <a href="#">Insurance</a>
@@ -267,170 +277,142 @@
       <a href="#">Events</a>
     </div>
     <div class="nav__right">
-      <a href="#" class="nav__icon" aria-label="Search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </a>
+      <a href="#" class="nav__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
       <a href="#">Auction Results</a>
       <a href="#">Sell</a>
-      <a href="#" class="nav__icon" aria-label="Watch list">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-      </a>
-      <a href="#" class="nav__icon" aria-label="Account">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      </a>
+      <a href="#" class="nav__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></a>
+      <a href="#" class="nav__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
     </div>
   </div>
 </nav>
 
-<!-- ── Sticky bar (shown on scroll) ── -->
-<div class="sticky-bar" id="stickyBar">
-  <div class="container sticky-bar__inner">
-    <span class="sticky-bar__title">1972 Alfa Romeo GTV 2000</span>
-    <span class="sticky-badge">No Reserve</span>
-    <div class="sticky-bar__meta">
-      <span>Time left <strong>6d 14h</strong></span>
-      <span>High bid <strong>$14,500</strong></span>
-      <span>Bids <strong>7</strong></span>
-      <span>Comments <strong>1</strong></span>
+<!-- STICKY BAR -->
+<div class="sticky" id="sticky">
+  <div class="container sticky__i">
+    <span class="sticky__title">1972 Alfa Romeo GTV 2000</span>
+    <span class="sticky__badge">No Reserve</span>
+    <span class="sticky__pipe">|</span>
+    <div class="sticky__meta">
+      <span class="sticky__meta-item">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Time left <span class="sticky__val" id="cdSticky">6 days</span>
+      </span>
+      <span class="sticky__meta-item">High bid <span class="sticky__val">$14,500</span></span>
+      <span class="sticky__meta-item"><a href="#bids" style="color:inherit">Bids <span class="sticky__val">7</span></a></span>
+      <span class="sticky__meta-item"><a href="#comments" style="color:inherit">Comments <span class="sticky__val">1</span></a></span>
     </div>
-    <div class="sticky-bar__actions">
-      <button class="btn-sticky">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <div class="sticky__acts">
+      <button class="btn-sw">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         Watch
       </button>
-      <button class="btn-sticky">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <button class="btn-sw">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         Share
       </button>
-      <button class="btn-sticky-bid">Place bid</button>
+      <button class="btn-bid-s">Place bid</button>
     </div>
   </div>
 </div>
 
-<!-- ── Breadcrumb ── -->
-<div class="breadcrumb">
+<!-- BREADCRUMB -->
+<div class="crumb">
   <div class="container">
-    <a href="#">Marketplace</a>
-    <span class="sep">›</span>
-    <a href="#">Auctions</a>
-    <span class="sep">›</span>
-    <span class="current">1972 Alfa Romeo GTV 2000</span>
+    <a href="#">Marketplace</a><span class="sep">›</span>
+    <a href="#">Auctions</a><span class="sep">›</span>
+    <span>1972 Alfa Romeo GTV 2000</span>
   </div>
 </div>
 
-<!-- ── Main ── -->
+<!-- LISTING -->
 <div class="listing">
   <div class="container">
 
     <h1 class="listing__title">1972 Alfa Romeo GTV 2000</h1>
-    <div class="listing__subtitle">
-      <span>Auction #ECS-0042</span>
-      <span class="dot">·</span>
-      <span>Listed Jun 20, 2026</span>
-      <span class="dot">·</span>
-      <a href="#comments" style="color:var(--muted)">1 Comment</a>
-    </div>
 
-    <!-- Gallery: large left + 2×2 right -->
-    <div class="gallery" id="galleryTop">
+    <!-- GALLERY -->
+    <div class="gallery" id="galleryAnchor">
       <div class="gallery__main">
-        <img id="mainImg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" alt="1972 Alfa Romeo GTV 2000 — exterior" />
-        <button class="gallery__nav gallery__nav--prev" onclick="changePhoto(-1)" aria-label="Previous">&#8249;</button>
-        <button class="gallery__nav gallery__nav--next" onclick="changePhoto(1)" aria-label="Next">&#8250;</button>
-        <div class="gallery__count-badge"><span id="photoNum">1</span> / 12</div>
+        <img id="mainImg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85" alt="1972 Alfa Romeo GTV 2000" />
+        <button class="g-arrow g-arrow-l" onclick="changePhoto(-1)">&#8249;</button>
+        <button class="g-arrow g-arrow-r" onclick="changePhoto(1)">&#8250;</button>
+        <div class="g-count"><span id="pNum">1</span> / 12</div>
       </div>
       <div class="gallery__grid">
-        <div class="gallery__grid-item" onclick="setPhoto(1)">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=70" alt="Side profile" />
-        </div>
-        <div class="gallery__grid-item" onclick="setPhoto(2)">
-          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400&q=70" alt="Rear 3/4" />
-        </div>
-        <div class="gallery__grid-item" onclick="setPhoto(3)">
-          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&q=70" alt="Interior" />
-        </div>
-        <div class="gallery__grid-item gallery__grid-item--more" onclick="setPhoto(4)">
+        <div class="g-thumb" onclick="setPhoto(1)"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=70" alt="" /></div>
+        <div class="g-thumb" onclick="setPhoto(2)"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400&q=70" alt="" /></div>
+        <div class="g-thumb" onclick="setPhoto(3)"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&q=70" alt="" /></div>
+        <div class="g-thumb g-thumb-more" onclick="setPhoto(4)">
+          <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=400&q=70" alt="" />
           <span>+8 photos</span>
         </div>
       </div>
     </div>
 
-    <!-- Thumbnail strip -->
-    <div class="gallery__strip">
-      <div class="gallery__strip-thumb active" onclick="setPhoto(0,this)">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=150&q=60" alt="Exterior front" />
-      </div>
-      <div class="gallery__strip-thumb" onclick="setPhoto(1,this)">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=150&q=60" alt="Side" />
-      </div>
-      <div class="gallery__strip-thumb" onclick="setPhoto(2,this)">
-        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=150&q=60" alt="Rear" />
-      </div>
-      <div class="gallery__strip-thumb" onclick="setPhoto(3,this)">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=150&q=60" alt="Interior" />
-      </div>
-      <div class="gallery__strip-thumb" onclick="setPhoto(4,this)">
-        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=150&q=60" alt="Engine" />
-      </div>
-      <div class="gallery__strip-thumb" onclick="setPhoto(5,this)">
-        <img src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=150&q=60" alt="Wheels" />
-      </div>
+    <!-- STRIP -->
+    <div class="g-strip">
+      <div class="g-st active" onclick="setPhoto(0,this)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=160&q=60" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(1,this)"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=160&q=60" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(2,this)"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=160&q=60" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(3,this)"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=160&q=60" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(4,this)"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=160&q=60" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(5,this)"><img src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=160&q=60" alt="" /></div>
     </div>
 
-    <!-- Two-column: specs + sidebar -->
-    <div class="listing__cols">
+    <!-- TWO-COLUMN -->
+    <div class="cols">
 
-      <!-- Left: specs -->
+      <!-- LEFT -->
       <div>
-        <table class="specs-table">
+        <div class="ending-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Ending <strong>Thu, Jun 28 at 5:00 PM MST</strong>
+        </div>
+        <table class="specs">
           <tr><td>Year</td><td>1972</td></tr>
           <tr><td>Make</td><td>Alfa Romeo</td></tr>
           <tr><td>Model</td><td>GTV 2000</td></tr>
-          <tr><td>VIN / Chassis</td><td>AR2102900</td></tr>
-          <tr><td>Mileage</td><td>62,400 Miles</td></tr>
-          <tr><td>Location</td><td>Scottsdale, Arizona</td></tr>
-          <tr><td>Engine</td><td>2.0L DOHC Inline-Four</td></tr>
-          <tr><td>Drivetrain</td><td>RWD</td></tr>
-          <tr><td>Transmission</td><td>5-Speed Manual</td></tr>
           <tr><td>Body Style</td><td>Coupe</td></tr>
+          <tr><td>Mileage</td><td>62,400 Miles</td></tr>
+          <tr><td>Engine</td><td>2.0L DOHC Inline-Four</td></tr>
+          <tr><td>Transmission</td><td>5-Speed Manual</td></tr>
+          <tr><td>Drivetrain</td><td>RWD</td></tr>
           <tr><td>Exterior</td><td>Alfa Rosso (Red)</td></tr>
           <tr><td>Interior</td><td>Cognac Leather</td></tr>
+          <tr><td>VIN</td><td>AR2102900</td></tr>
+          <tr><td>Location</td><td>Scottsdale, Arizona</td></tr>
         </table>
-
         <div class="carfax-row">
-          <span class="carfax-logo">CARFAX</span>
-          <a href="#" class="carfax-link">Vehicle History Report: 1972 Alfa Romeo GTV 2000</a>
+          <span class="cfx">CARFAX</span>
+          <a href="#" class="cfx-link">Vehicle History Report: 1972 Alfa Romeo GTV 2000</a>
         </div>
-
-        <div class="certified-badge" style="margin-top:10px">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Certified Checkout available
+        <div class="cert">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00884a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <div class="cert-body">
+            Certified Checkout available
+            <small><a href="#">Certified Checkout</a> is included with this listing</small>
+          </div>
         </div>
       </div>
 
-      <!-- Right: sidebar -->
+      <!-- RIGHT SIDEBAR -->
       <div class="sidebar">
-        <div class="finance-section">
+        <div class="finance-card">
           <h3>Finance this vehicle</h3>
-          <p>Get pre-qualified in minutes. Rates from 6.9% APR for qualified buyers.</p>
-          <a href="#" class="finance-link">Check my rate — no impact to credit score</a>
+          <p>Get pre-qualified in minutes with no impact to your credit score. Competitive rates for qualified buyers.</p>
+          <a href="#">Check my rate →</a>
         </div>
-
         <div class="bid-box">
-          <div class="bid-box__head">
-            <div class="bid-box__head-title">Current auction</div>
-            <div class="bid-box__car-name">1972 Alfa Romeo GTV 2000</div>
+          <div class="bb-hd">
+            <div class="bb-hd-lbl">Make Value &amp; bid</div>
+            <div class="bb-hd-name">1972 Alfa Romeo GTV 2000</div>
           </div>
-          <div class="bid-box__body">
-            <div class="bid-box__label">Current bid</div>
-            <div class="bid-box__amount">$14,500</div>
-            <div class="bid-box__meta">
-              <span>Seller</span>: <span>MeccanicaRoss</span>
-              <span class="sep">·</span>
-              <span>No Reserve</span>
-            </div>
-            <button class="btn-place-bid">Place bid</button>
-            <div class="bid-box__actions">
+          <div class="bb-body">
+            <div class="bb-bid-lbl">Current bid</div>
+            <div class="bb-amount">$14,500</div>
+            <div class="bb-submeta">No reserve · <a href="#bids">7 bids</a></div>
+            <button class="btn-bid">Place bid</button>
+            <div class="bb-links">
               <a href="#">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 Watch
@@ -440,35 +422,31 @@
                 Share
               </a>
               <a href="#">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l18 18M3 21L21 3"/></svg>
-                Flag
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                Flag listing
               </a>
             </div>
           </div>
-          <div class="bid-box__footer">
-            <div class="bid-box__timer">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Ends <strong id="timerDisplay">Jun 28 at 5:00 PM MST</strong> · <strong id="countdown2">6d 14h</strong>
-            </div>
+          <div class="bb-ft">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Ends <strong>Thu, Jun 28 at 5:00 PM MST</strong> · <strong id="cdBox"></strong>
           </div>
         </div>
       </div>
 
-    </div><!-- /listing__cols -->
+    </div><!-- /cols -->
 
-    <!-- Content sections -->
-
+    <!-- OVERVIEW -->
     <div class="section">
-      <h2 class="section__title">Overview</h2>
-      <div class="section__body">
-        <p>The Alfa Romeo GTV 2000 (Gran Turismo Veloce) stands as one of the finest expressions of Italian sports car design from the early 1970s. Penned by Giorgetto Giugiaro during his time at Bertone, the 105-series coupe body is widely considered a high-water mark in postwar European automotive styling — all long bonnet, fastback roofline, and purposeful stance. This 1972 example, finished in factory Alfa Rosso over cognac leather, presents as an honest, well-maintained driver with an appealing combination of correct specification and sympathetic stewardship.</p>
-        <p>The car spent the bulk of its life in the arid Southwest, where the dry climate has been kind to the floors, sills, and inner structure — the areas that most commonly claim these cars. The twin-cam 2.0-liter feeds through a pair of Dell'Orto carburetors and pulls cleanly throughout the rev range. The five-speed gearbox shifts precisely with no notchiness or jumping out of gear. This is a car that rewards the driver who simply wants to use it.</p>
-      </div>
+      <h2>Overview</h2>
+      <p>The Alfa Romeo GTV 2000 (Gran Turismo Veloce) stands as one of the finest expressions of Italian sports car design from the early 1970s. Penned by Giorgetto Giugiaro during his time at Bertone, the 105-series coupe body is widely considered a high-water mark in postwar European automotive styling — all long bonnet, fastback roofline, and purposeful stance.</p>
+      <p>This 1972 example, finished in factory Alfa Rosso over cognac leather, presents as an honest, well-maintained driver with an appealing combination of correct specification and sympathetic stewardship. The car spent the bulk of its life in the arid Southwest, where the dry climate has been kind to the floors, sills, and inner structure — the areas that most commonly claim these cars.</p>
     </div>
 
+    <!-- HIGHLIGHTS -->
     <div class="section">
-      <h2 class="section__title">Highlights</h2>
-      <ul class="bullet-list">
+      <h2>Highlights</h2>
+      <ul class="blist">
         <li>Numbers-matching 2.0L twin-cam engine, original to the car per build records</li>
         <li>Dry-climate Arizona car from new — no significant rust to floors, sills, or wheel arches</li>
         <li>Factory Alfa Rosso paint with original color confirmed by door jamb plate</li>
@@ -480,9 +458,10 @@
       </ul>
     </div>
 
+    <!-- FACTORY EQUIPMENT -->
     <div class="section">
-      <h2 class="section__title">Factory Equipment</h2>
-      <ul class="bullet-list">
+      <h2>Factory Equipment</h2>
+      <ul class="blist">
         <li>2.0L DOHC inline-four (Type 00564) — 130 bhp as delivered</li>
         <li>ZF-sourced 5-speed manual gearbox with Alfin limited-slip differential</li>
         <li>4-wheel disc brakes — Girling calipers, drilled front rotors</li>
@@ -494,31 +473,34 @@
       </ul>
     </div>
 
+    <!-- MODIFICATIONS -->
     <div class="section">
-      <h2 class="section__title">Modifications</h2>
-      <ul class="bullet-list">
+      <h2>Modifications</h2>
+      <ul class="blist">
         <li>Stainless steel exhaust system (Ragazzon, installed 2019) — replaces original mild steel unit</li>
         <li>Electronic ignition module (Pertronix) — points and condenser retained in glovebox</li>
         <li>Aftermarket oil pressure and water temperature gauges mounted in A-pillar pod</li>
       </ul>
     </div>
 
+    <!-- SERVICE HISTORY -->
     <div class="section">
-      <h2 class="section__title">Service History</h2>
-      <ul class="bullet-list">
-        <li>Drive belts and serpentine belt replaced (2025)</li>
-        <li>Transmission fluid and oil changed (2025)</li>
-        <li>Rear brake pads replaced (2024)</li>
-        <li>Cooling system serviced (2024)</li>
-        <li>Oil and filter changed (2024)</li>
-        <li>Brake fluid flushed (2024)</li>
-        <li>Full brake rebuild — new front calipers, new rotors, pads, hoses (2023)</li>
+      <h2>Service History</h2>
+      <ul class="blist">
+        <li>Drive belts and serpentine belt replaced</li>
+        <li>Transmission fluid and oil changed</li>
+        <li>Rear brake pads replaced</li>
+        <li>Cooling system serviced</li>
+        <li>Oil and filter changed</li>
+        <li>Coolant replaced</li>
+        <li>Brake fluid flushed</li>
       </ul>
     </div>
 
+    <!-- KNOWN IMPERFECTIONS -->
     <div class="section">
-      <h2 class="section__title">Known Imperfections</h2>
-      <ul class="bullet-list">
+      <h2>Known Imperfections</h2>
+      <ul class="blist">
         <li>Various scratches to the paint, as shown in the gallery</li>
         <li>Plastic windshield spray nozzle is broken off</li>
         <li>Interior door panel trim is loose</li>
@@ -527,67 +509,64 @@
       </ul>
     </div>
 
+    <!-- OWNERSHIP HISTORY -->
     <div class="section">
-      <h2 class="section__title">Ownership History</h2>
-      <div class="section__body">
-        <p>The clean CARFAX vehicle history Report begins in 1992 and shows no California registration history. The car is currently registered in Arizona.</p>
-      </div>
+      <h2>Ownership History</h2>
+      <p>The clean CARFAX vehicle History Report begins in 1982 and shows no California registration history.</p>
     </div>
 
+    <!-- INCLUDED ITEMS -->
     <div class="section">
-      <h2 class="section__title">Included Items</h2>
-      <ul class="bullet-list">
+      <h2>Included Items</h2>
+      <ul class="blist">
         <li>Jack and toolkit</li>
         <li>Spare tire</li>
       </ul>
     </div>
 
+    <!-- ADDITIONAL INFORMATION -->
     <div class="section">
-      <h2 class="section__title">Additional Information</h2>
-      <div class="section__body">
-        <p>From the seller: "I paid the registration for 2025 but I did do the smog test because we were not driving it. It has not been registered for 2026."</p>
-      </div>
+      <h2>Additional Information</h2>
+      <p>From the seller: "I paid the registration for 2025 but I did do the smog test because we were not driving it. It has not been registered for 2026."</p>
     </div>
 
-    <!-- Documents -->
+    <!-- ADDITIONAL DOCUMENTS -->
     <div class="section">
-      <h2 class="section__title">Additional documents</h2>
+      <h2>Additional documents</h2>
       <div class="doc-list">
-        <a href="#" class="doc-item">
-          <div class="doc-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
+        <a href="#" class="doc-link">
+          <div class="doc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
           CARFAX Vehicle History Report: 1972 Alfa Romeo GTV 2000
         </a>
-        <a href="#" class="doc-item">
-          <div class="doc-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
+        <a href="#" class="doc-link">
+          <div class="doc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
           Vehicle Valuation Report: 1972 Alfa Romeo GTV 2000
         </a>
       </div>
     </div>
 
-    <!-- Disclaimer -->
+    <!-- DISCLAIMER -->
     <div class="disclaimer">
       All auction listings on Euro Car Summer Marketplace are created using information provided by the seller. The Marketplace team and the seller have reviewed all information for accuracy to the best of their abilities. Bidders are ultimately responsible for conducting their own due diligence before placing a bid, including verifying details, condition, registration requirements, and compliance with applicable laws. For any questions or additional information, contact the seller.
     </div>
 
-    <!-- Mid-page bid card -->
-    <div class="mid-bid-card">
-      <div class="mid-bid-card__title">1972 Alfa Romeo GTV 2000</div>
-      <div class="mid-bid-card__body">
-        <div class="mid-bid-card__label">Current bid</div>
-        <div class="mid-bid-card__amount">$14,500</div>
-        <div class="mid-bid-card__meta">
-          Seller: <span>MeccanicaRoss</span>
-          &nbsp;·&nbsp;
-          Ends Jun 28 at 5:00 PM MST
-          &nbsp;·&nbsp;
-          Bids: <span>7</span>
+    <!-- INLINE BID CARD -->
+    <div class="ibid">
+      <div class="ibid__hd"><strong>1972 Alfa Romeo GTV 2000</strong> · No reserve</div>
+      <div class="ibid__body">
+        <div>
+          <div class="ibid__lbl">Current bid</div>
+          <div class="ibid__amt">$14,500</div>
         </div>
-        <button class="btn-place-bid">Place bid</button>
-        <div class="mid-bid-card__links">
+        <div class="ibid__right">
+          <span>Seller: <strong>MeccanicaRoss</strong></span>
+          <span>Date: <strong>Thu, Jun 28 at 5:00 PM MST</strong></span>
+          <span>Bids: <strong>7</strong></span>
+        </div>
+      </div>
+      <div class="ibid__acts">
+        <button class="btn-bid">Place bid</button>
+        <div class="ibid__act-links">
           <a href="#">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             Watch
@@ -597,243 +576,187 @@
             Share
           </a>
           <a href="#">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l18 18M3 21L21 3"/></svg>
-            Flag
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            Flag listing
           </a>
         </div>
       </div>
-      <div class="mid-bid-card__footer">
-        <svg style="display:inline;vertical-align:middle;margin-right:4px" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Ends Thu, Jun 28 at 5:00 PM MST · <strong id="countdown3">6d 14h 22m</strong>
+      <div class="ibid__ft">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Ends <strong>Thu, Jun 28 at 5:00 PM MST</strong> · <strong id="cdInline"></strong>
       </div>
     </div>
 
-    <!-- Bids -->
+    <!-- BIDS -->
     <div class="section" id="bids">
-      <div class="bids-header">
-        <h2>Bids</h2>
-        <span class="bids-count">7 · 44 seconds ago</span>
+      <div class="bids-hd">Bids</div>
+      <div class="bids-sub">7 · 44 seconds ago</div>
+      <div class="bid-entry">
+        <div class="bid-av">G</div>
+        <div class="bid-det">
+          <div class="bid-user">GTV_hunter_42</div>
+          <div class="bid-date">Jun 22 at 10:14 AM</div>
+          <div class="bid-placed">$14,500 bid placed</div>
+        </div>
       </div>
-      <div>
-        <div class="bid-row">
-          <div class="bid-avatar">G</div>
-          <div class="bid-info">
-            <div class="bid-user">GTV_hunter_42</div>
-            <div class="bid-time">Jun 22 at 10:14 AM</div>
-          </div>
-          <div class="bid-amount-cell">$14,500</div>
+      <div class="bid-entry">
+        <div class="bid-av">I</div>
+        <div class="bid-det">
+          <div class="bid-user">ItaliaDriver99</div>
+          <div class="bid-date">Jun 22 at 9:48 AM</div>
+          <div class="bid-placed">$13,750 bid placed</div>
         </div>
-        <div class="bid-row">
-          <div class="bid-avatar">I</div>
-          <div class="bid-info">
-            <div class="bid-user">ItaliaDriver99</div>
-            <div class="bid-time">Jun 22 at 9:48 AM</div>
-          </div>
-          <div class="bid-amount-cell">$13,750</div>
-        </div>
-        <div class="bid-row">
-          <div class="bid-avatar">A</div>
-          <div class="bid-info">
-            <div class="bid-user">alfaromeo_fan</div>
-            <div class="bid-time">Jun 21 at 6:32 PM</div>
-          </div>
-          <div class="bid-amount-cell">$12,500</div>
-        </div>
-        <div class="bid-row">
-          <div class="bid-avatar">I</div>
-          <div class="bid-info">
-            <div class="bid-user">ItaliaDriver99</div>
-            <div class="bid-time">Jun 21 at 2:17 PM</div>
-          </div>
-          <div class="bid-amount-cell">$11,000</div>
-        </div>
-        <div class="bid-row">
-          <div class="bid-avatar">B</div>
-          <div class="bid-info">
-            <div class="bid-user">BertoneCoupe</div>
-            <div class="bid-time">Jun 20 at 8:05 PM</div>
-          </div>
-          <div class="bid-amount-cell">$9,500</div>
+      </div>
+      <div class="bid-entry">
+        <div class="bid-av">A</div>
+        <div class="bid-det">
+          <div class="bid-user">alfaromeo_fan</div>
+          <div class="bid-date">Jun 21 at 6:32 PM</div>
+          <div class="bid-placed">$12,500 bid placed</div>
         </div>
       </div>
     </div>
 
-    <!-- Comments -->
+    <!-- COMMENTS -->
     <div class="section" id="comments">
-      <h2 class="section__title">Comments</h2>
-      <div class="comment">
-        <div class="comment__avatar">W</div>
-        <div>
-          <div class="comment__name">WolfGang_Info</div>
-          <div class="comment__time">Jun 21 at 3:22 PM</div>
-          <div class="comment__body">How do you do it on a vehicle without asking questions?</div>
-          <div class="comment__actions">
+      <h2>Comments</h2>
+      <div class="cmt-add">Please <a href="#">log in</a> or <a href="#">register</a> to add comment.</div>
+      <div class="cmt">
+        <div class="cmt-av">W</div>
+        <div class="cmt-body">
+          <div class="cmt-name">WolfGang_Info</div>
+          <div class="cmt-time">Jun 21 at 3:22 PM</div>
+          <div class="cmt-text">How do you do it on a vehicle without asking questions?</div>
+          <div class="cmt-acts">
             <a href="#">👍 0</a>
             <a href="#">Reply</a>
             <a href="#">Report</a>
           </div>
         </div>
       </div>
-      <div class="comment-gate">
-        Please <a href="#">log in</a> or <a href="#">register</a> to add comment.
-      </div>
     </div>
 
   </div><!-- /container -->
 </div><!-- /listing -->
 
-<!-- ── Why / Testimonial / Newsletter ── -->
-<div class="promo-strip">
-  <div class="promo-grid">
-    <div class="promo-col promo-col--dark">
-      <h3>Why Euro Car Summer Marketplace?</h3>
-      <ul>
-        <li>Get expert support from start to finish</li>
-        <li>All buyers and sellers are verified</li>
-        <li>Access trusted valuation data for pricing help</li>
-      </ul>
-      <a href="#" class="learn-more">Learn more →</a>
-    </div>
-    <div class="promo-col promo-col--white">
-      <h3>What our customers say</h3>
-      <div class="testimonial-name">Judy W.</div>
-      <div class="testimonial-body">"Thanks for your help getting this done. I'd call it the car sale of a lifetime. I'd recommend it again should the opportunity arise."</div>
-      <div class="testimonial-meta">
-        Sold a <a href="#" class="testimonial-car">1965 Chevrolet Corvette 327/365 4-Speed</a>
-      </div>
-    </div>
-    <div class="promo-col promo-col--light">
-      <h3>Get the Marketplace daily email</h3>
-      <div class="newsletter-form">
-        <p>Stay tabs on classic cars for sale, recent transactions, enthusiast-focused listings and more.</p>
-        <div class="newsletter-input-row">
-          <input type="email" placeholder="1985@cars.com" aria-label="Email address" />
-          <button type="submit">Subscribe</button>
-        </div>
-      </div>
+<!-- PROMO STRIP -->
+<div class="promo">
+  <div class="promo-col promo-dark">
+    <h3>Why Euro Car Summer Marketplace?</h3>
+    <p class="intro">Euro Car Summer Marketplace is the ultimate destination for buying and selling European classic vehicles online.</p>
+    <ul>
+      <li>Get expert support from start to finish</li>
+      <li>All buyers and sellers are verified</li>
+      <li>Access trusted valuation data for pricing help</li>
+    </ul>
+    <a href="#" class="promo-learn">Learn more</a>
+  </div>
+  <div class="promo-col promo-white">
+    <h3>What our customers say</h3>
+    <div class="promo-cust-name">Judy W.</div>
+    <div class="promo-quote">"Thanks for your help getting this done. I'd call it the car sale of a lifetime. I'd recommend it again should the opportunity arise."</div>
+    <div class="promo-sold">Sold a <a href="#">1965 Chevrolet Corvette 327/365 4-Speed</a></div>
+  </div>
+  <div class="promo-col promo-light">
+    <h3>Get the Marketplace daily email</h3>
+    <p class="promo-nl-sub">Stay tabs on classic cars for sale, recent transactions, enthusiast-focused listings and more.</p>
+    <div class="nl-row">
+      <input type="email" placeholder="1985@cars.com" />
+      <button>Subscribe</button>
     </div>
   </div>
 </div>
 
-<!-- ── Footer ── -->
-<footer class="footer">
+<!-- LEGAL TEXT -->
+<div class="legal">
   <div class="container">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <div class="footer__logo">
-          <span style="font-size:22px;font-weight:900">H</span>
-          <span style="color:#5a6070;font-weight:300;font-size:18px">//</span>
-          <span>euro car summer</span>
-        </div>
-        <p>Newsletter<br />Stay up to date with the latest news.</p>
-      </div>
-      <div class="footer__col">
-        <h4>Marketplace</h4>
-        <ul>
-          <li><a href="#">Current Auctions</a></li>
-          <li><a href="#">Buy Now</a></li>
-          <li><a href="#">Auction Results</a></li>
-          <li><a href="#">Sell Your Car</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Drivers Club</h4>
-        <ul>
-          <li><a href="#">Membership</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Magazine</a></li>
-          <li><a href="#">Roadside</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Accessibility</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
-      </div>
+    <p>Euro Car Summer Marketplace offers both classifieds and auctions. Classified listings are a benefit provided to members of Euro Car Summer Drivers Club, a non-insurance subsidiary of Euro Car Summer Group, LLC. Euro Car Summer is not a licensed vehicle broker and does not take a commission on classified purchases completed directly between buyers and sellers outside the Marketplace platform. Auction listings are hosted on Euro Car Summer Marketplace and Euro Car Summer Digital Solutions LLC takes a 5% buyer's premium on auction sales. Euro Car Summer is not a party to transactions completed directly between buyers and sellers, and Euro Car Summer Digital Solutions LLC is not a party to auction purchase transactions. Euro Car Summer Digital Solutions LLC is not a licensed vehicle dealer or broker. For additional information see the <a href="#">Marketplace Terms</a> and <a href="#">Privacy Policy</a>. Euro Car Summer and Euro Car Summer Marketplace are registered trademarks. All copyrights, logos, and trademarks of Euro Car Summer are reserved by Euro Car Summer Drivers Club, LLC © 2026. The Euro Car Summer Group, LLC is a subsidiary of Euro Car Summer, Inc.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-wordmark">EURO CAR<br>SUMMER</div>
+      <div class="footer-nl-label">Newsletter</div>
+      <div class="footer-nl-sub">Stay up to date with the latest news.</div>
     </div>
-    <div class="footer__bottom">
-      <span>© 2026 Euro Car Summer, LLC. All rights reserved.</span>
-      <div>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Accessibility</a>
-      </div>
+    <div class="footer-col">
+      <h4>Marketplace</h4>
+      <ul>
+        <li><a href="#">Current Auctions</a></li>
+        <li><a href="#">Buy Now</a></li>
+        <li><a href="#">Auction Results</a></li>
+        <li><a href="#">Sell Your Car</a></li>
+        <li><a href="#">Valuation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Drivers Club</h4>
+      <ul>
+        <li><a href="#">Membership</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Magazine</a></li>
+        <li><a href="#">Roadside</a></li>
+        <li><a href="#">Insurance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <span>© 2026 Euro Car Summer, LLC. All rights reserved.</span>
+    <div>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Sitemap</a>
     </div>
   </div>
 </footer>
 
 <script>
-  /* Gallery */
-  const photos = [
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
-    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=80",
-    "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200&q=80",
-    "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200&q=80",
-    "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=1200&q=80",
-    "https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=1200&q=80",
-  ];
-  let current = 0;
+const photos=[
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85",
+  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85",
+  "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1400&q=85",
+  "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1400&q=85",
+  "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=1400&q=85",
+  "https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=1400&q=85",
+];
+let cur=0;
+function updateGallery(){
+  document.getElementById("mainImg").src=photos[cur];
+  document.getElementById("pNum").textContent=cur+1;
+  document.querySelectorAll(".g-st").forEach((el,i)=>el.classList.toggle("active",i===cur));
+}
+function changePhoto(d){cur=(cur+d+photos.length)%photos.length;updateGallery();}
+function setPhoto(i){if(i<photos.length){cur=i;updateGallery();}}
 
-  function updateGallery() {
-    document.getElementById("mainImg").src = photos[current];
-    document.getElementById("photoNum").textContent = current + 1;
-    document.querySelectorAll(".gallery__strip-thumb").forEach((el, i) => {
-      el.classList.toggle("active", i === current);
-    });
-  }
+// Sticky bar
+const sticky=document.getElementById("sticky");
+new IntersectionObserver(([e])=>sticky.classList.toggle("on",!e.isIntersecting),{threshold:0}).observe(document.getElementById("galleryAnchor"));
 
-  function changePhoto(dir) {
-    current = (current + dir + photos.length) % photos.length;
-    updateGallery();
-  }
-
-  function setPhoto(idx, el) {
-    if (idx >= photos.length) return;
-    current = idx;
-    updateGallery();
-  }
-
-  /* Sticky bar */
-  const stickyBar = document.getElementById("stickyBar");
-  const galleryEl = document.getElementById("galleryTop");
-  const observer = new IntersectionObserver(
-    ([entry]) => stickyBar.classList.toggle("visible", !entry.isIntersecting),
-    { threshold: 0 }
-  );
-  observer.observe(galleryEl);
-
-  /* Countdown */
-  const endTime = new Date("2026-06-28T17:00:00-07:00");
-  function fmt(ms) {
-    if (ms <= 0) return "Ended";
-    const d = Math.floor(ms / 86400000);
-    const h = Math.floor((ms % 86400000) / 3600000);
-    const m = Math.floor((ms % 3600000) / 60000);
-    return `${d}d ${h}h ${m}m`;
-  }
-  function tick() {
-    const v = fmt(endTime - Date.now());
-    ["countdown2","countdown3"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = v;
-    });
-  }
-  tick();
-  setInterval(tick, 60000);
+// Countdown
+const end=new Date("2026-06-28T17:00:00-07:00");
+function fmt(ms){
+  if(ms<=0)return"Ended";
+  const d=Math.floor(ms/86400000),h=Math.floor((ms%86400000)/3600000),m=Math.floor((ms%3600000)/60000);
+  return d+"d "+h+"h "+m+"m";
+}
+function tick(){
+  const v=fmt(end-Date.now());
+  ["cdBox","cdInline","cdSticky"].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=v;});
+}
+tick();setInterval(tick,60000);
 </script>
-
 </body>
 </html>
