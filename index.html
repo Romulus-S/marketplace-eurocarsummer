@@ -333,30 +333,32 @@ img{display:block;max-width:100%}
     <!-- GALLERY -->
     <div class="gallery" id="galleryAnchor">
       <div class="gallery__main">
-        <img id="mainImg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85" alt="1972 Alfa Romeo GTV 2000" />
+        <img id="mainImg" src="photos/1.jpg" alt="1972 Alfa Romeo GTV 2000" />
         <button class="g-arrow g-arrow-l" onclick="changePhoto(-1)">&#8249;</button>
         <button class="g-arrow g-arrow-r" onclick="changePhoto(1)">&#8250;</button>
-        <div class="g-count"><span id="pNum">1</span> / 12</div>
+        <div class="g-count"><span id="pNum">1</span> / 87</div>
       </div>
       <div class="gallery__grid">
-        <div class="g-thumb" onclick="setPhoto(1)"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=70" alt="" /></div>
-        <div class="g-thumb" onclick="setPhoto(2)"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400&q=70" alt="" /></div>
-        <div class="g-thumb" onclick="setPhoto(3)"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&q=70" alt="" /></div>
+        <div class="g-thumb" onclick="setPhoto(1)"><img src="photos/2.jpg" alt="" /></div>
+        <div class="g-thumb" onclick="setPhoto(2)"><img src="photos/3.jpg" alt="" /></div>
+        <div class="g-thumb" onclick="setPhoto(3)"><img src="photos/4.jpg" alt="" /></div>
         <div class="g-thumb g-thumb-more" onclick="setPhoto(4)">
-          <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=400&q=70" alt="" />
-          <span>+8 photos</span>
+          <img src="photos/5.jpg" alt="" />
+          <span>+83 photos</span>
         </div>
       </div>
     </div>
 
     <!-- STRIP -->
     <div class="g-strip">
-      <div class="g-st active" onclick="setPhoto(0,this)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=160&q=60" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(1,this)"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=160&q=60" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(2,this)"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=160&q=60" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(3,this)"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=160&q=60" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(4,this)"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=160&q=60" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(5,this)"><img src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=160&q=60" alt="" /></div>
+      <div class="g-st active" onclick="setPhoto(0,this)"><img src="photos/1.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(1,this)"><img src="photos/2.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(2,this)"><img src="photos/3.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(3,this)"><img src="photos/4.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(4,this)"><img src="photos/5.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(5,this)"><img src="photos/6.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(6,this)"><img src="photos/7.jpg" alt="" /></div>
+      <div class="g-st" onclick="setPhoto(7,this)"><img src="photos/8.jpg" alt="" /></div>
     </div>
 
     <!-- TWO-COLUMN -->
@@ -724,14 +726,7 @@ img{display:block;max-width:100%}
 </footer>
 
 <script>
-const photos=[
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85",
-  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85",
-  "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1400&q=85",
-  "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1400&q=85",
-  "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=1400&q=85",
-  "https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=1400&q=85",
-];
+const photos=Array.from({length:87},(_,i)=>`photos/${i+1}.jpg`);
 let cur=0;
 function updateGallery(){
   document.getElementById("mainImg").src=photos[cur];
