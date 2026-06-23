@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1972 Alfa Romeo GTV 2000 — Euro Car Summer Marketplace</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #1a1f2e;
+      --navy2:  #252b3b;
+      --red:    #c1272d;
+      --red2:   #a01e23;
+      --gold:   #c9973a;
+      --gray:   #f4f5f7;
+      --border: #e0e2e6;
+      --text:   #1a1f2e;
+      --muted:  #6b7280;
+      --white:  #ffffff;
+      --radius: 4px;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Utility ──────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+    .badge--green { background: #d1fae5; color: #065f46; }
+    .badge--gold  { background: #fef3c7; color: #92400e; }
+    .badge--blue  { background: #dbeafe; color: #1e40af; }
+
+    /* ── Top Bar ──────────────────────────────────── */
+    .topbar {
+      background: var(--navy);
+      color: #9ca3af;
+      font-size: 12px;
+      padding: 6px 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .topbar a { margin-left: 20px; color: #9ca3af; }
+    .topbar a:hover { color: #fff; }
+
+    /* ── Primary Nav ──────────────────────────────── */
+    .nav {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      gap: 8px;
+    }
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+      margin-right: 24px;
+      white-space: nowrap;
+    }
+    .nav__logo-mark {
+      width: 34px; height: 34px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 900; color: #fff;
+    }
+    .nav__links {
+      display: flex; gap: 4px; flex: 1;
+    }
+    .nav__links a {
+      color: #cbd5e1;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color .15s, background .15s;
+    }
+    .nav__links a:hover, .nav__links a.active {
+      color: #fff;
+      background: rgba(255,255,255,.07);
+    }
+    .nav__actions {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav__actions a {
+      color: #cbd5e1;
+      font-size: 13px;
+      padding: 6px 10px;
+    }
+    .nav__btn {
+      background: var(--red);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background .15s;
+    }
+    .nav__btn:hover { background: var(--red2); }
+
+    /* ── Breadcrumb ───────────────────────────────── */
+    .breadcrumb {
+      background: var(--gray);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .breadcrumb span { margin: 0 6px; }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb .current { color: var(--text); font-weight: 500; }
+
+    /* ── Listing Layout ───────────────────────────── */
+    .listing {
+      padding: 28px 0 60px;
+    }
+    .listing__header { margin-bottom: 16px; }
+    .listing__title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .listing__meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .listing__meta .sep { color: var(--border); }
+
+    /* Auction status bar */
+    .auction-bar {
+      background: var(--navy);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .auction-bar__item { display: flex; flex-direction: column; gap: 2px; }
+    .auction-bar__label { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; color: #94a3b8; }
+    .auction-bar__value { font-size: 22px; font-weight: 700; line-height: 1; }
+    .auction-bar__value.green { color: #4ade80; }
+    .auction-bar__actions { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+    .btn-bid {
+      background: var(--red);
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      transition: background .15s;
+    }
+    .btn-bid:hover { background: var(--red2); }
+    .btn-watch {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 11px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex; align-items: center; gap: 7px;
+      transition: border-color .15s, background .15s;
+    }
+    .btn-watch:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); }
+
+    /* ── Image Gallery ────────────────────────────── */
+    .gallery { margin-bottom: 28px; }
+    .gallery__main {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0e1117;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .gallery__main img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: opacity .3s;
+    }
+    .gallery__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      border: none;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    .gallery__nav:hover { background: rgba(0,0,0,.8); }
+    .gallery__nav--prev { left: 12px; }
+    .gallery__nav--next { right: 12px; }
+    .gallery__count {
+      position: absolute;
+      bottom: 10px; right: 12px;
+      background: rgba(0,0,0,.6);
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+    .gallery__thumbs {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+    .gallery__thumb {
+      aspect-ratio: 4/3;
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color .15s;
+    }
+    .gallery__thumb.active { border-color: var(--red); }
+    .gallery__thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery__thumb--more {
+      background: rgba(0,0,0,.7);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 15px;
+    }
+
+    /* ── Two-column body ──────────────────────────── */
+    .listing__body {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* ── Specs Card ───────────────────────────────── */
+    .specs-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .specs-card__title {
+      background: var(--gray);
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .spec-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .spec-item:nth-child(odd) { border-right: 1px solid var(--border); }
+    .spec-item:nth-last-child(-n+2) { border-bottom: none; }
+    .spec-item__label { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 3px; }
+    .spec-item__value { font-size: 14px; font-weight: 600; }
+
+    /* ── Content Sections ─────────────────────────── */
+    .section {
+      margin-bottom: 32px;
+    }
+    .section__title {
+      font-size: 17px;
+      font-weight: 700;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 16px;
+      letter-spacing: -0.1px;
+    }
+    .section__body { font-size: 14.5px; line-height: 1.7; color: #374151; }
+    .section__body p + p { margin-top: 12px; }
+    .bullet-list { display: flex; flex-direction: column; gap: 8px; }
+    .bullet-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .bullet-list li::before {
+      content: "";
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .service-log { display: flex; flex-direction: column; gap: 14px; }
+    .service-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-entry:last-child { border-bottom: none; padding-bottom: 0; }
+    .service-year { font-weight: 700; font-size: 14px; color: var(--red); }
+    .service-detail { font-size: 14px; line-height: 1.6; color: #374151; }
+
+    /* ── Bid Activity ─────────────────────────────── */
+    .bid-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .bid-table th {
+      text-align: left;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--border);
+    }
+    .bid-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .bid-table tr:last-child td { border-bottom: none; }
+    .bid-table tr.winner td { background: #f0fdf4; font-weight: 600; }
+    .bid-amount { font-weight: 700; color: var(--text); }
+
+    /* ── Sidebar ──────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    .action-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .action-card__head {
+      padding: 12px 16px;
+      background: var(--gray);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--muted);
+    }
+    .action-card__body { padding: 16px; }
+    .action-card__body p { font-size: 13.5px; line-height: 1.6; margin-bottom: 12px; color: #4b5563; }
+    .btn-outline {
+      display: block;
+      text-align: center;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      padding: 9px 16px;
+      border-radius: var(--radius);
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: background .15s, color .15s;
+    }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
+    .btn-solid {
+      display: block;
+      text-align: center;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: background .15s;
+    }
+    .btn-solid:hover { background: var(--red2); }
+    .btn-solid + .btn-outline { margin-top: 8px; }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      color: #4b5563;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row svg { flex-shrink: 0; margin-top: 1px; }
+
+    /* Seller card */
+    .seller-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .seller-card__head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: center; }
+    .seller-avatar {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 16px;
+      flex-shrink: 0;
+    }
+    .seller-name { font-weight: 700; font-size: 14px; }
+    .seller-since { font-size: 12px; color: var(--muted); }
+    .seller-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .seller-stat {
+      padding: 12px 16px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .seller-stat:nth-child(2n) { border-right: none; }
+    .seller-stat:nth-last-child(-n+2) { border-bottom: none; }
+    .seller-stat__val { font-size: 18px; font-weight: 700; }
+    .seller-stat__lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+
+    /* Why marketplace */
+    .why-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+    .why-item { display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5; color: #cbd5e1; }
+    .why-icon {
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 13px;
+    }
+    .why-item strong { display: block; color: #fff; font-size: 13.5px; }
+
+    /* ── Comments ─────────────────────────────────── */
+    .comments-gate {
+      background: var(--gray);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .comments-gate p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+
+    /* ── Newsletter ───────────────────────────────── */
+    .newsletter {
+      background: var(--gray);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .newsletter h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .newsletter p { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+    .newsletter-form { display: flex; gap: 8px; }
+    .newsletter-form input {
+      flex: 1;
+      padding: 9px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .newsletter-form input:focus { outline: none; border-color: var(--navy); }
+    .newsletter-form button {
+      background: var(--navy);
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background .15s;
+    }
+    .newsletter-form button:hover { background: var(--navy2); }
+
+    /* ── Testimonial ──────────────────────────────── */
+    .testimonial {
+      border-left: 3px solid var(--red);
+      padding: 16px 20px;
+      background: var(--gray);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 32px 0;
+    }
+    .testimonial blockquote { font-size: 15px; line-height: 1.65; font-style: italic; color: #374151; margin-bottom: 10px; }
+    .testimonial cite { font-size: 12.5px; font-weight: 600; color: var(--muted); font-style: normal; }
+
+    /* ── Footer ───────────────────────────────────── */
+    .footer {
+      background: var(--navy);
+      color: #9ca3af;
+      padding: 48px 0 24px;
+      margin-top: 60px;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .footer__brand .nav__logo { margin-bottom: 12px; }
+    .footer__brand p { font-size: 13px; line-height: 1.65; max-width: 240px; }
+    .footer__col h4 { color: #e2e8f0; font-size: 12px; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px; }
+    .footer__col ul { display: flex; flex-direction: column; gap: 8px; }
+    .footer__col li a { font-size: 13px; color: #9ca3af; transition: color .15s; }
+    .footer__col li a:hover { color: #fff; }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer__bottom a { color: #6b7280; }
+    .footer__bottom a:hover { color: #9ca3af; }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 960px) {
+      .listing__body { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .gallery__thumbs { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .listing__title { font-size: 22px; }
+      .auction-bar { gap: 16px; }
+      .auction-bar__value { font-size: 18px; }
+      .nav__links { display: none; }
+      .specs-grid { grid-template-columns: 1fr; }
+      .spec-item:nth-child(odd) { border-right: none; }
+      .spec-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .spec-item:last-child { border-bottom: none; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .gallery__thumbs { grid-template-columns: repeat(3, 1fr); }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <div class="container" style="display:flex;justify-content:flex-end;width:100%">
+    <a href="#">Sign In</a>
+    <a href="#">Register</a>
+    <a href="#">Help</a>
+  </div>
+</div>
+
+<!-- ── Nav ────────────────────────────────────────── -->
+<nav class="nav" aria-label="Primary navigation">
+  <div class="container nav__inner">
+    <a href="#" class="nav__logo">
+      <div class="nav__logo-mark">E</div>
+      Euro Car Summer
+    </a>
+    <div class="nav__links">
+      <a href="#">Auctions</a>
+      <a href="#">Buy Now</a>
+      <a href="#">Results</a>
+      <a href="#">Valuations</a>
+      <a href="#">Magazine</a>
+    </div>
+    <div class="nav__actions">
+      <a href="#">Watch List</a>
+      <a href="#">My Garage</a>
+      <a href="#" class="nav__btn">Sell Your Car</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Breadcrumb ──────────────────────────────────── -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="#">Marketplace</a>
+    <span>›</span>
+    <a href="#">Auctions</a>
+    <span>›</span>
+    <a href="#">Italian</a>
+    <span>›</span>
+    <span class="current">1972 Alfa Romeo GTV 2000</span>
+  </div>
+</div>
+
+<!-- ── Main ───────────────────────────────────────── -->
+<main class="listing">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="listing__header">
+      <h1 class="listing__title">1972 Alfa Romeo GTV 2000</h1>
+      <div class="listing__meta">
+        <span class="badge badge--green">No Reserve</span>
+        <span class="badge badge--gold">Featured</span>
+        <span class="sep">·</span>
+        <span>Auction #ECS-0042</span>
+        <span class="sep">·</span>
+        <span>Listed Jun 20, 2026</span>
+        <span class="sep">·</span>
+        <a href="#comments" style="color:var(--muted)">0 Comments</a>
+      </div>
+    </div>
+
+    <!-- Auction Status Bar -->
+    <div class="auction-bar">
+      <div class="auction-bar__item">
+        <span class="auction-bar__label">Current Bid</span>
+        <span class="auction-bar__value green">$14,500</span>
+      </div>
+      <div class="auction-bar__item">
+        <span class="auction-bar__label">Bids</span>
+        <span class="auction-bar__value">7</span>
+      </div>
+      <div class="auction-bar__item">
+        <span class="auction-bar__label">Time Left</span>
+        <span class="auction-bar__value" id="countdown">6d 14h 22m</span>
+      </div>
+      <div class="auction-bar__item">
+        <span class="auction-bar__label">Reserve</span>
+        <span class="auction-bar__value" style="font-size:15px;color:#4ade80">Not Met → No Reserve</span>
+      </div>
+      <div class="auction-bar__actions">
+        <button class="btn-watch" aria-label="Watch this listing">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Watch
+        </button>
+        <button class="btn-bid">Place Bid →</button>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <div class="gallery__main">
+        <img
+          id="mainImg"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"
+          alt="1972 Alfa Romeo GTV 2000 — main photo"
+        />
+        <button class="gallery__nav gallery__nav--prev" onclick="changePhoto(-1)" aria-label="Previous photo">‹</button>
+        <button class="gallery__nav gallery__nav--next" onclick="changePhoto(1)" aria-label="Next photo">›</button>
+        <div class="gallery__count"><span id="photoNum">1</span> / 12</div>
+      </div>
+      <div class="gallery__thumbs" role="list">
+        <div class="gallery__thumb active" role="listitem" onclick="setPhoto(0, this)">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=70" alt="Exterior front 3/4" />
+        </div>
+        <div class="gallery__thumb" role="listitem" onclick="setPhoto(1, this)">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=300&q=70" alt="Driver side profile" />
+        </div>
+        <div class="gallery__thumb" role="listitem" onclick="setPhoto(2, this)">
+          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=300&q=70" alt="Rear 3/4" />
+        </div>
+        <div class="gallery__thumb" role="listitem" onclick="setPhoto(3, this)">
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=300&q=70" alt="Interior cockpit" />
+        </div>
+        <div class="gallery__thumb" role="listitem" onclick="setPhoto(4, this)">
+          <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=300&q=70" alt="Engine bay" />
+        </div>
+        <div class="gallery__thumb gallery__thumb--more" role="listitem" onclick="setPhoto(5, this)">
+          +7 more
+        </div>
+      </div>
+    </div>
+
+    <!-- Body: main content + sidebar -->
+    <div class="listing__body">
+
+      <!-- ── Left: main content ──────────────────── -->
+      <div class="listing__main">
+
+        <!-- Specs Card -->
+        <div class="specs-card">
+          <div class="specs-card__title">Vehicle Details</div>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <div class="spec-item__label">VIN / Chassis</div>
+              <div class="spec-item__value">AR2102900</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Mileage</div>
+              <div class="spec-item__value">62,400 Miles</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Location</div>
+              <div class="spec-item__value">Scottsdale, AZ</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Engine</div>
+              <div class="spec-item__value">2.0L DOHC Inline-Four</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Transmission</div>
+              <div class="spec-item__value">5-Speed Manual</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Drivetrain</div>
+              <div class="spec-item__value">RWD</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Body Style</div>
+              <div class="spec-item__value">2-Door Coupe</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Exterior Color</div>
+              <div class="spec-item__value">Alfa Rosso (Red)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Interior Color</div>
+              <div class="spec-item__value">Cognac Leather</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item__label">Title</div>
+              <div class="spec-item__value">Clean — Arizona</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="section">
+          <h2 class="section__title">Description</h2>
+          <div class="section__body">
+            <p>The Alfa Romeo GTV 2000 (Gran Turismo Veloce) stands as one of the finest expressions of Italian sports car design from the early 1970s. Penned by Giorgetto Giugiaro during his time at Bertone, the 105-series body is widely regarded as a high-water mark in postwar European automotive styling — all long bonnet, fastback roofline, and purposeful stance.</p>
+            <p>This 1972 example, finished in factory Alfa Rosso over cognac leather, presents as a honest, well-maintained driver with an appealing combination of correct specification and sympathetic stewardship. The car spent the bulk of its life in the arid Southwest, where the dry climate has been kind to the floors, sills, and inner structure — the areas that most commonly claim these cars.</p>
+            <p>The twin-cam 2.0-liter feeds through a pair of Dell'Orto carburetors and pulls cleanly throughout the rev range. The five-speed gearbox shifts precisely with no notchiness or jumping out of gear. Brakes are progressive and confidence-inspiring. This is a car that rewards the driver who simply wants to use it.</p>
+          </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="section">
+          <h2 class="section__title">Highlights</h2>
+          <ul class="bullet-list">
+            <li>Numbers-matching 2.0L twin-cam engine, original to the car per build records</li>
+            <li>Dry-climate Arizona car from new — no significant rust to floors, sills, or wheel arches</li>
+            <li>Factory Alfa Rosso paint with original color confirmed by door jamb plate</li>
+            <li>Original cognac leather interior — seams intact, no major cracking to bolsters</li>
+            <li>Complete tool roll, factory jack, and original owner's manual present</li>
+            <li>Correct Campagnolo alloy wheels, recently restored and shod with period-correct Pirelli CN36</li>
+            <li>All four disc brakes recently rebuilt with new calipers front, new rotors all around</li>
+            <li>Stainless exhaust system — no rot, no patches</li>
+          </ul>
+        </div>
+
+        <!-- Factory Equipment -->
+        <div class="section">
+          <h2 class="section__title">Factory Equipment</h2>
+          <ul class="bullet-list">
+            <li>2.0L DOHC inline-four (Type 00564) — 130 bhp as delivered</li>
+            <li>ZF-sourced 5-speed manual gearbox with Alfin limited-slip differential</li>
+            <li>4-wheel disc brakes — Girling calipers, drilled front rotors</li>
+            <li>Dell'Orto DHLA 40 twin carburetors</li>
+            <li>Recaro-specification sport seats (factory option, period production)</li>
+            <li>Woodrim Nardi steering wheel (installed new in 1974 per service record)</li>
+            <li>AM/FM Blaupunkt Frankfurt radio — non-functional but present for originality</li>
+            <li>Campagnolo 14″ alloy wheels with Alfa center caps</li>
+          </ul>
+        </div>
+
+        <!-- Modifications -->
+        <div class="section">
+          <h2 class="section__title">Modifications &amp; Non-Stock Items</h2>
+          <ul class="bullet-list">
+            <li>Stainless steel exhaust system (Ragazzon, installed 2019) — replaces original mild steel unit</li>
+            <li>Electronic ignition module (Pertronix) — points and condenser retained in glovebox</li>
+            <li>Aftermarket oil pressure and water temperature gauges mounted in A-pillar pod</li>
+          </ul>
+        </div>
+
+        <!-- Service History -->
+        <div class="section">
+          <h2 class="section__title">Service &amp; Documentation</h2>
+          <div class="service-log">
+            <div class="service-entry">
+              <div class="service-year">2025</div>
+              <div class="service-detail">Full brake rebuild — new front calipers (Ate), new rotors all corners, new pads and brake hoses. Bleed with fresh fluid. Handbrake cable adjusted.</div>
+            </div>
+            <div class="service-entry">
+              <div class="service-year">2024</div>
+              <div class="service-detail">Timing belt, tensioner, and water pump replaced. Cam seals renewed. Valve clearances checked and adjusted within spec. Coolant system flushed.</div>
+            </div>
+            <div class="service-entry">
+              <div class="service-year">2023</div>
+              <div class="service-detail">Carburetor rebuild — new needles, jets, and float bowl gaskets. Weber rebuild kit sourced from Alfa Parts Exchange. Cold start performance notably improved.</div>
+            </div>
+            <div class="service-entry">
+              <div class="service-year">2022</div>
+              <div class="service-detail">New battery (Odyssey). Engine mounts inspected — fronts replaced, rears found to be adequate. Clutch master and slave cylinders replaced; clutch pedal feel restored.</div>
+            </div>
+            <div class="service-entry">
+              <div class="service-year">2019</div>
+              <div class="service-detail">Ragazzon stainless exhaust fitted. Campagnolo wheels stripped, powder-coated in original silver, and refinished centers. Pirelli CN36 195/60-14 tires (new).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Known Imperfections -->
+        <div class="section">
+          <h2 class="section__title">Known Imperfections</h2>
+          <ul class="bullet-list">
+            <li>Small stone chip on the leading edge of the hood, approximately 5mm — touched up but visible on close inspection</li>
+            <li>Passenger door glass has a shallow scratch roughly 4 inches long — does not impair visibility</li>
+            <li>Driver's seat right bolster shows light wear; original leather otherwise excellent</li>
+            <li>Headliner has one small stain near the rear view mirror mount — not torn</li>
+            <li>Original Blaupunkt radio face cracked at one corner — does not affect function (unit was non-functional before acquisition)</li>
+            <li>Right rear wheel arch has a very minor surface imperfection in the paint from a previous minor parking contact — no dent, properly repaired but visible in raking light</li>
+          </ul>
+        </div>
+
+        <!-- Ownership -->
+        <div class="section">
+          <h2 class="section__title">Ownership History &amp; Included Items</h2>
+          <div class="section__body">
+            <p>Originally delivered new in Italy in 1972, the car was imported to the United States in 1976 and has remained in the Southwest ever since. The current seller acquired it in 2018 from a retired engineer in Tucson who had owned the car for fourteen years. The car has been driven and enjoyed, not stored — roughly 3,000 to 4,000 miles per year since 2018.</p>
+            <p>A partial service history back to 1985 is present, with receipts for work described above. The car's originality has been maintained throughout.</p>
+          </div>
+          <ul class="bullet-list" style="margin-top:14px">
+            <li>Factory tool roll with all original tools</li>
+            <li>Factory scissor jack and bag</li>
+            <li>Original owner's manual (Italian, with partial English supplement)</li>
+            <li>Partial service history — approximately 1985 to present</li>
+            <li>Spare set of points, condenser, and rotor</li>
+            <li>Clean Arizona title in seller's name</li>
+          </ul>
+        </div>
+
+        <!-- Seller Note -->
+        <div class="section">
+          <h2 class="section__title">Seller Note</h2>
+          <div class="section__body">
+            <p>The car is currently registered and currently insured in Arizona. A current smog certificate (Arizona exempt by age) will be provided at sale. Buyer is responsible for all transport, registration, and transfer costs. Happy to accommodate pre-arranged inspections in Scottsdale — please reach out through the listing messaging system.</p>
+          </div>
+        </div>
+
+        <!-- Bid Activity -->
+        <div class="section">
+          <h2 class="section__title">Bid Activity</h2>
+          <table class="bid-table">
+            <thead>
+              <tr>
+                <th>Bidder</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="winner">
+                <td>GTV_hunter_42</td>
+                <td class="bid-amount">$14,500</td>
+                <td>Jun 22</td>
+                <td>10:14 AM</td>
+              </tr>
+              <tr>
+                <td>ItaliaDriver99</td>
+                <td class="bid-amount">$13,750</td>
+                <td>Jun 22</td>
+                <td>9:48 AM</td>
+              </tr>
+              <tr>
+                <td>alfaromeo_fan</td>
+                <td class="bid-amount">$12,500</td>
+                <td>Jun 21</td>
+                <td>6:32 PM</td>
+              </tr>
+              <tr>
+                <td>ItaliaDriver99</td>
+                <td class="bid-amount">$11,000</td>
+                <td>Jun 21</td>
+                <td>2:17 PM</td>
+              </tr>
+              <tr>
+                <td>BertoneCoupe</td>
+                <td class="bid-amount">$9,500</td>
+                <td>Jun 20</td>
+                <td>8:05 PM</td>
+              </tr>
+              <tr>
+                <td>alfaromeo_fan</td>
+                <td class="bid-amount">$7,500</td>
+                <td>Jun 20</td>
+                <td>4:41 PM</td>
+              </tr>
+              <tr>
+                <td>BertoneCoupe</td>
+                <td class="bid-amount">$5,000</td>
+                <td>Jun 20</td>
+                <td>11:22 AM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Comments -->
+        <div class="section" id="comments">
+          <h2 class="section__title">Comments (0)</h2>
+          <div class="comments-gate">
+            <p>Sign in to ask the seller a question or leave a comment on this listing.</p>
+            <div style="display:flex;gap:10px;justify-content:center">
+              <a href="#" class="btn-solid" style="display:inline-block;padding:9px 24px">Sign In</a>
+              <a href="#" class="btn-outline" style="display:inline-block;padding:9px 24px">Register Free</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+          <h3>Get alerts for listings like this</h3>
+          <p>Be first to know when new Italian classic auctions go live on Euro Car Summer.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="your@email.com" aria-label="Email address" />
+            <button type="submit">Subscribe</button>
+          </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial">
+          <blockquote>"Listed my Giulia on a Thursday, sold it by Sunday for well above my reserve. The audience here actually knows these cars — no low-ballers, no tire-kickers."</blockquote>
+          <cite>— Marco T., sold a 1966 Giulia Sprint GT · April 2026</cite>
+        </div>
+
+      </div><!-- /listing__main -->
+
+      <!-- ── Right: Sidebar ───────────────────────── -->
+      <aside class="sidebar">
+
+        <!-- Action Card -->
+        <div class="action-card">
+          <div class="action-card__head">This Auction</div>
+          <div class="action-card__body">
+            <div class="info-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ends <strong style="margin-left:4px">Jun 28, 2026 at 5:00 PM MST</strong>
+            </div>
+            <div class="info-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              Scottsdale, Arizona
+            </div>
+            <div class="info-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12m0 0V2m0 10H2m10 0h10"/></svg>
+              No Reserve — highest bid wins
+            </div>
+            <div class="info-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Buyer's Premium: 5%
+            </div>
+            <button class="btn-bid" style="width:100%;margin-top:8px">Place Bid →</button>
+            <button class="btn-watch" style="width:100%;margin-top:8px;color:var(--navy);border-color:var(--border)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              Add to Watch List
+            </button>
+          </div>
+        </div>
+
+        <!-- Seller Card -->
+        <div class="seller-card">
+          <div class="seller-card__head">
+            <div class="seller-avatar">M</div>
+            <div>
+              <div class="seller-name">MeccanicaRoss</div>
+              <div class="seller-since">Member since 2021 · Scottsdale, AZ</div>
+            </div>
+          </div>
+          <div class="seller-stats">
+            <div class="seller-stat">
+              <div class="seller-stat__val">4</div>
+              <div class="seller-stat__lbl">Cars Sold</div>
+            </div>
+            <div class="seller-stat">
+              <div class="seller-stat__val">100%</div>
+              <div class="seller-stat__lbl">Positive</div>
+            </div>
+            <div class="seller-stat" style="grid-column:span 2">
+              <div class="seller-stat__val">4.9 ★</div>
+              <div class="seller-stat__lbl">Seller Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insurance Card -->
+        <div class="action-card">
+          <div class="action-card__head">Insure This Vehicle</div>
+          <div class="action-card__body">
+            <p>Protect your classic with agreed-value coverage from a specialist insurer trusted by European car enthusiasts.</p>
+            <a href="#" class="btn-solid">Get a Quote</a>
+            <a href="#" class="btn-outline" style="margin-top:8px">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Why Marketplace -->
+        <div class="why-card">
+          <h3>Why Euro Car Summer Marketplace?</h3>
+          <div class="why-item">
+            <div class="why-icon">★</div>
+            <div><strong>Curated audience</strong> Every listing reviewed by enthusiasts who know the marques.</div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🔒</div>
+            <div><strong>Secure checkout</strong> Escrow-backed payment protects buyers and sellers alike.</div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">📋</div>
+            <div><strong>Full transparency</strong> All imperfections disclosed. No surprises at delivery.</div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🚗</div>
+            <div><strong>Transport concierge</strong> We can arrange enclosed shipping to anywhere in the US.</div>
+          </div>
+          <a href="#" style="display:block;text-align:center;margin-top:12px;color:#93c5fd;font-size:13px;font-weight:600">Learn more →</a>
+        </div>
+
+      </aside>
+
+    </div><!-- /listing__body -->
+
+  </div><!-- /container -->
+</main>
+
+<!-- ── Footer ──────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo" style="margin-bottom:12px">
+          <div class="nav__logo-mark">E</div>
+          Euro Car Summer
+        </div>
+        <p>The marketplace for European classics — bought and sold by people who actually drive them.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Marketplace</h4>
+        <ul>
+          <li><a href="#">Current Auctions</a></li>
+          <li><a href="#">Buy Now Listings</a></li>
+          <li><a href="#">Auction Results</a></li>
+          <li><a href="#">Sell Your Car</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Valuations</a></li>
+          <li><a href="#">Buyer's Guide</a></li>
+          <li><a href="#">Seller's Guide</a></li>
+          <li><a href="#">Inspection Tips</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Magazine</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Euro Car Summer. All rights reserved.</span>
+      <div style="display:flex;gap:20px">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Gallery JS ───────────────────────────────────── -->
+<script>
+  const photos = [
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=80",
+    "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200&q=80",
+    "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200&q=80",
+    "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=1200&q=80",
+  ];
+  let current = 0;
+
+  function updateGallery() {
+    document.getElementById("mainImg").src = photos[current];
+    document.getElementById("photoNum").textContent = current + 1;
+    document.querySelectorAll(".gallery__thumb").forEach((el, i) => {
+      el.classList.toggle("active", i === current);
+    });
+  }
+
+  function changePhoto(dir) {
+    current = (current + dir + photos.length) % photos.length;
+    updateGallery();
+  }
+
+  function setPhoto(idx, el) {
+    if (idx >= photos.length) return;
+    current = idx;
+    updateGallery();
+  }
+
+  // Live countdown
+  const end = new Date("2026-06-28T17:00:00-07:00");
+  function updateCountdown() {
+    const diff = end - Date.now();
+    if (diff <= 0) { document.getElementById("countdown").textContent = "Ended"; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    document.getElementById("countdown").textContent = `${d}d ${h}h ${m}m`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+</script>
+
+</body>
+</html>
