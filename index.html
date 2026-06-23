@@ -82,12 +82,6 @@ img{display:block;max-width:100%}
 .g-thumb-more{display:flex;align-items:center;justify-content:center}
 .g-thumb-more img{opacity:.4}
 .g-thumb-more span{position:absolute;color:#fff;font-size:13px;font-weight:700}
-.g-strip{display:flex;gap:4px;padding:4px 0 14px;overflow-x:auto}
-.g-strip::-webkit-scrollbar{height:3px}
-.g-strip::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
-.g-st{width:80px;flex-shrink:0;height:60px;border-radius:3px;overflow:hidden;cursor:pointer;border:2px solid transparent}
-.g-st.active{border-color:var(--blue)}
-.g-st img{width:100%;height:100%;object-fit:cover}
 
 /* TWO-COLUMN */
 .cols{display:grid;grid-template-columns:1fr 360px;gap:32px;margin-bottom:36px;align-items:start}
@@ -349,17 +343,6 @@ img{display:block;max-width:100%}
       </div>
     </div>
 
-    <!-- STRIP -->
-    <div class="g-strip">
-      <div class="g-st active" onclick="setPhoto(0,this)"><img src="photos/1.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(1,this)"><img src="photos/2.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(2,this)"><img src="photos/3.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(3,this)"><img src="photos/4.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(4,this)"><img src="photos/5.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(5,this)"><img src="photos/6.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(6,this)"><img src="photos/7.jpg" alt="" /></div>
-      <div class="g-st" onclick="setPhoto(7,this)"><img src="photos/8.jpg" alt="" /></div>
-    </div>
 
     <!-- TWO-COLUMN -->
     <div class="cols">
@@ -731,7 +714,6 @@ let cur=0;
 function updateGallery(){
   document.getElementById("mainImg").src=photos[cur];
   document.getElementById("pNum").textContent=cur+1;
-  document.querySelectorAll(".g-st").forEach((el,i)=>el.classList.toggle("active",i===cur));
 }
 function changePhoto(d){cur=(cur+d+photos.length)%photos.length;updateGallery();}
 function setPhoto(i){if(i<photos.length){cur=i;updateGallery();}}
